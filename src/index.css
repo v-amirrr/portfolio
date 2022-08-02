@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&display=swap');
+
 :root {
     color-scheme: dark;
 }
@@ -20,8 +22,8 @@ html {
 }
 
 body {
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 :any-link {
