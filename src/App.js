@@ -5,6 +5,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 
 const App = () => {
 
@@ -17,6 +18,7 @@ const App = () => {
     return (
         <>
             <AnimatePresence exitBeforeEnter>
+                <Navbar />
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Home />} />
                 </Routes>
