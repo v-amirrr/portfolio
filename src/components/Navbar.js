@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
@@ -19,11 +19,18 @@ const Navbar = () => {
     return (
         <>
             <Nav variants={navbarVariants}>
-                <div className={location.pathname == "/" && "active"}>home</div>
-                <div>technologies</div>
-                <div>projects</div>
-                <div>about me</div>
-                <div>contact</div>
+                <Link to="/">
+                    <div className={location.pathname == "/" ? "active" : ""}>home</div>
+                </Link>
+                <Link to="/projects">
+                    <div className={location.pathname == "/projects" ? "active" : ""}>projects</div>
+                </Link>
+                <Link to="/">
+                    <div>about me</div>
+                </Link>
+                <Link to="/">
+                    <div>contact</div>
+                </Link>
             </Nav>
         </>
     );
@@ -40,11 +47,12 @@ const Nav = styled(motion.nav)`
     word-spacing: 2px;
     font-size: .7rem;
     cursor: pointer;
+    z-index: 9;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%);
-    padding: 1.4rem 1rem;
+    padding: 1rem;
     border-radius: 0 0 10px 10px;
     background-color: #e6e6e608;
     box-shadow: #00000011 0px 4px 12px;

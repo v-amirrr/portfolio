@@ -6,34 +6,26 @@ import { motion } from 'framer-motion';
 
 const homePageVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", staggerChildren: 0.5, delayChildren: 0.5 } },
+    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", staggerChildren: 0.5 } },
     exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
 };
 
 const titleVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.4, type: 'tween' } }
-};
-
-const buttonsVariants = {
-    hidden: { opacity: 0, scaleX: 0 },
-    visible: { opacity: 1, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
 };
 
 const Home = () => {
     return (
         <>
             <HomePage initial='hidden' animate='visible' exit='exit' variants={homePageVariants}>
-                <Background><img src='images/bg2.jpg' /></Background>
-
                 <Title variants={titleVariants}>
                         <h1>Hi, I'm Amir.</h1>
                         <h1>I'm a Front-End developer.</h1>
                 </Title>
 
-                <Buttons variants={buttonsVariants}>
+                <Buttons variants={titleVariants}>
                     <Button whileTap={{ scale: 0.8 }}>
                         let's go
                     </Button>
@@ -50,28 +42,10 @@ const Home = () => {
 const HomePage = styled(motion.section)`
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: top right;
-    background-blend-mode: multiply;
-    background-color: #00000099;
-`;
-
-const Background = styled(motion.div)`
-    position: absolute;
-    inset: 0 0 0 0;
-    z-index: -9;
-    
-    img {
-        filter: blur(50px);
-        width: 100%;
-        height: 100%;
-    }
 `;
 
 const Title = styled(motion.div)`
@@ -128,7 +102,7 @@ const Button = styled(motion.button)`
     margin: 0 1rem;    
     backdrop-filter: blur(10px) saturate(150%);
     -webkit-backdrop-filter: blur(10px) saturate(150%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00000055;
     transition: background-color .4s, box-shadow .4s, border .4s;
     box-shadow: #00000011 0px 4px 12px;
     border: solid 1px #ffffff11;
