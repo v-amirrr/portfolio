@@ -33,11 +33,12 @@ const Projects = () => {
                     {
                         projects.map(item => (
                             <Link to={"/project/" + item.url}>
-                            <Project whileHover={{ scale: 1.1, transition: { duration: 0.4 } }} whileTap={{ scale: 0.8 }}>
+                            <Project whileTap={{ scale: 0.8 }}>
                                 <img src={item.img} />
                                 <div>
                                     <h4>{item.name}</h4>
                                     <p>{item.description}</p>
+                                    <span>CLICK FOR MORE DETAIL</span>
                                 </div>
                             </Project>
                             </Link>
@@ -70,6 +71,7 @@ const Content = styled(motion.div)`
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    scroll-behavior: smooth;
 
     @media (max-width: 1300px) {
         overflow-y: scroll;
@@ -85,14 +87,14 @@ const Content = styled(motion.div)`
 
     /* Track */
     ::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background: #ffffff22;
+        border-radius: 50px;
+        background: #ffffff11;
     }
     
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #c1c1c1;
-        border-radius: 10px;
+        background: #ffffff44;
+        border-radius: 50px;
     }
 `;
 
@@ -139,7 +141,7 @@ const Project = styled(motion.div)`
         h4 {
             color: #fff;
             z-index: 10;
-            font-size: .8rem;
+            font-size: 1.2rem;
             position: absolute;
             bottom: .5rem;
             transition: bottom .4s, font-size .2s;
@@ -158,36 +160,60 @@ const Project = styled(motion.div)`
             opacity: 0;
             transition: opacity .4s, bottom .4s;
         }
+
+        span {
+            position: absolute;
+            bottom: 0;
+            opacity: 0;
+            font-size: .5rem;
+            transition: opacity .4s, bottom .4s;
+            font-weight: 600;
+            color: #00b7ff;
+        }
     }
 
-    &:hover {
-        div {
-            background-size: 100% 100%;
-
-            h4 {
-                bottom: 3rem;
-                font-size: 1.2rem;
-            }
-
-            p {
-                opacity: 1;
-                bottom: 2rem;
+    @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
+        &:hover {
+            div {
+                background-size: 100% 100%;
+    
+                h4 {
+                    bottom: 5rem;
+                }
+    
+                p {
+                    opacity: 1;
+                    bottom: 4rem;
+                }
+    
+                span {
+                    opacity: 1;
+                    bottom: 1rem;
+                }
             }
         }
     }
 
     @media (max-width: 745px) {
+        transform: scale(1) !important;
+
         div {
             background-size: 100% 100%;
 
             h4 {
-                bottom: 4rem;
+                position: relative;
                 font-size: 1.5rem;
             }
 
             p {
                 opacity: 1;
-                bottom: 3rem;
+                bottom: 3.5rem;
+                font-size: .4rem;
+            }
+
+            span {
+                opacity: 1;
+                bottom: 1rem;
             }
         }
     }
