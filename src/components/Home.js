@@ -2,6 +2,8 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+import { Link } from "react-router-dom";
+
 import { motion } from 'framer-motion';
 
 const homePageVariants = {
@@ -26,14 +28,20 @@ const Home = () => {
                 </Title>
 
                 <Buttons variants={titleVariants}>
-                    <Button whileTap={{ scale: 0.8 }}>
-                        let's go
-                    </Button>
+                    <Link to="/projects">
+                        <Button whileTap={{ scale: 0.8 }}>
+                            let's go
+                        </Button>
+                    </Link>
 
-                    <Button whileTap={{ scale: 0.8 }}>
-                        resume
-                    </Button>
+                    <a href='https://drive.google.com/file/d/1zkA2SZ9vHBRix_V7fClJcWDvTNXIdkBc/view?usp=sharing' target="_blank">
+                        <Button whileTap={{ scale: 0.8 }}>
+                            resume
+                        </Button>
+                    </a>
                 </Buttons>
+
+                <p>This project is still under construction.</p>
             </HomePage>
         </>
     );
@@ -46,6 +54,15 @@ const HomePage = styled(motion.section)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    p {
+        text-transform: capitalize;
+        margin-top: 4rem;
+        font-family: 'Outfit', sans-serif;
+        word-spacing: 5px;
+        font-weight: 600;
+        color: #f0f0f0;
+    }
 `;
 
 const Title = styled(motion.div)`
@@ -91,6 +108,7 @@ const Button = styled(motion.button)`
     font-family: 'Outfit', sans-serif;
     text-transform: uppercase;
     font-size: 1.2rem;
+    font-weight: 900 !important;
     border-radius: 10px;
     width: 8rem;
     height: 3rem;
@@ -106,6 +124,7 @@ const Button = styled(motion.button)`
     transition: background-color .4s, box-shadow .4s, border .4s;
     box-shadow: #00000011 0px 4px 12px;
     border: solid 1px #ffffff11;
+    color: #fff;
     
     &:hover {
         background-color: #ffffff11;

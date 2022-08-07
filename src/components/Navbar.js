@@ -20,16 +20,16 @@ const Navbar = () => {
         <>
             <Nav variants={navbarVariants}>
                 <Link to="/">
-                    <div className={location.pathname == "/" ? "active" : ""}>home</div>
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/" ? "active" : ""}>home</motion.div>
                 </Link>
                 <Link to="/projects">
-                    <div className={location.pathname == "/projects" ? "active" : ""}>projects</div>
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/projects" ? "active" : ""}>projects</motion.div>
                 </Link>
                 <Link to="/">
-                    <div>about me</div>
+                    <motion.div whileTap={{ scale: 0.8 }}>about me</motion.div>
                 </Link>
                 <Link to="/">
-                    <div>contact</div>
+                    <motion.div whileTap={{ scale: 0.8 }}>contact</motion.div>
                 </Link>
             </Nav>
         </>
@@ -57,12 +57,7 @@ const Nav = styled(motion.nav)`
     background-color: #e6e6e608;
     box-shadow: #00000011 0px 4px 12px;
     border: solid 1px #ffffff11;
-    transition: border .4s;
-
-    &:hover {
-        border: solid 1px #ffffff19;
-    }
-
+    
     div {
         padding: 0 .8rem;
         cursor: pointer;        
@@ -70,10 +65,16 @@ const Nav = styled(motion.nav)`
         transition: color .4s, padding .4s, letter-spacing .4s;
         white-space: nowrap;
 
-        &:hover {
-            padding: 0 1rem;
-            letter-spacing: 2px;
+        @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
+            &:hover {
+                padding: 0 1rem;
+                letter-spacing: 2px;
+            }
         }
+        
+            @media (max-width: 500px) {
+                padding: 0 .4rem;
+            }
     }
 
     .active {
