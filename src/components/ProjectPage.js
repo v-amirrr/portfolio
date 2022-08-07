@@ -57,7 +57,7 @@ const ProjectPage = () => {
 
                         <Title variants={projectItemVariants}>
                             <div>
-                                <i onClick={() => navigate("/projects")}><IoIosArrowBack /></i>
+                                <i onClick={() => navigate(-1)}><IoIosArrowBack /></i>
                                 <h1>{data.name}</h1>
                             </div>
                         </Title>

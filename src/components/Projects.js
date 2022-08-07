@@ -41,7 +41,7 @@ const Projects = () => {
                   <Content variants={contentVariants}>
                     {
                         projects.map(item => (
-                            <Link to={"/project/" + item.url}>
+                            <Link to={"/projects/" + item.url}>
                                 <Project whileTap={{ scale: 0.8 }} variants={projectVariants}>
                                     <img src={item.img} />
                                     <div>

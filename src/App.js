@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 
@@ -10,14 +10,11 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 import ProjectPage from './components/ProjectPage';
+import AboutMe from './components/AboutMe';
 
 const App = () => {
 
     const location = useLocation();
-
-    useEffect(() => {
-        localStorage.setItem("lan", "en");
-    }, []);
 
     return (
         <>
@@ -27,7 +24,8 @@ const App = () => {
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Home />} />
                     <Route path='/projects' element={<Projects />} />
-                    <Route path='/project/:id' element={<ProjectPage />} />
+                    <Route path='/projects/:id' element={<ProjectPage />} />
+                    <Route path='/about-me' element={<AboutMe />} />
                 </Routes>
             </AnimatePresence>
         </>
