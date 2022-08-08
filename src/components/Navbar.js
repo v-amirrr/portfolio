@@ -6,19 +6,13 @@ import { useLocation, Link } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 
-const navbarVariants = {
-    hidden: { opacity: 0, y: -20, scaleY: 0 },
-    visible: { opacity: 1, y: 0, scaleY: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: -20, scaleY: 0, transition: { duration: 0.4, type: 'tween' } }
-};
-
 const Navbar = () => {
 
     const location = useLocation();
 
     return (
         <>
-            <Nav variants={navbarVariants}>
+            <Nav>
                 <Link to="/">
                     <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/" ? "active" : ""}>home</motion.div>
                 </Link>
@@ -51,7 +45,7 @@ const Nav = styled(motion.nav)`
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, 0);
     padding: 1rem;
     border-radius: 0 0 10px 10px;
     background-color: #e6e6e608;

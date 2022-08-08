@@ -8,73 +8,82 @@ import { motion } from 'framer-motion';
 
 const pageVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween' } }
-};
-
-const contentVariants = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', delayChildren: 0.5, staggerChildren: 0.2 } },
-    exit: { opacity: 1, transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
 };
 
 const titleVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -50, transition: { duration: 0.4, type: 'tween' } }
+    hidden: { opacity: 0, x: -50, scaleX: 0.8 },
+    visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, x: -50, scaleX: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const textVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: 50, transition: { duration: 0.4, type: 'tween' } }
+    hidden: { opacity: 0, x: 50, scaleX: 0.8 },
+    visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, x: 50, scaleX: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const AboutMe = () => {
     return (
         <>
             <AboutMePage initial='hidden' animate='visible' exit='exit' variants={pageVariants}>
-                <img src="/images/download.jpg" />
-
-                <Content variants={contentVariants}>
+                <Content>
                     <Title variants={titleVariants}>who am i?</Title>
                     <Text variants={textVariants}>
                         I'm a junior Front-End Developer. I borned and raised in Mashhad which is a !beautiful city in Iran.
                         <br />
-                        I started learning web development at 2020, and it was one my best decisions throughout life.
                         <br />
-                        First I learned HTML and CSS. Then I tried Bootstrap but I decided that pure CSS gives me more freedom so I sticked with that.
+                        I started learning web development in 2020, and it was one of my best decisions throughout life.
                         <br />
-                        At that point I remeber I built some projects with HTML and CSS but since I didn't know any Git, I have no idea where those projects are.
                         <br />
-                        Those projects were first time that I had to deal with responsiveness, and it was !great.
+                        First I learned HTML and CSS. Then I tried Bootstrap but I decided that pure CSS gives me more freedom so I decided to only use pure CSS and nothing else.
+                        <br />
+                        <br />
+                        At that point I remember I built some projects with HTML and CSS but since I didn't know any Git, I have no idea where those projects are.
+                        <br />
+                        <br />
+                        Those projects were the first time that I had to deal with responsiveness, and it was !great.
+                        <br />
                         <br />
                         After that I learned JavaScript (still learning, ain't no end learning that shit). Then I tried some libraries for animating stuff such as Animate.CSS, Typed.js, Particles.js and ScrollReveal.js.
                         <br />
-                        Also I tried jQuery to know what it is and after realizing what it is I haven't work with since.
                         <br />
-                        Then I learnd Git and it was project time so I built my first professional project called <Link to="/projects/6" className='link'>CLock</Link>. This project is built only with HTML, CSS and JavaScript.
+                        Also I tried jQuery to know what it is and after realizing what it is I haven't worked with it since.
                         <br />
-                        After my first project, it was time to start the real shit. So I started learning React.js. Why I choose React? Good questions.
                         <br />
-                        So after trying a lot of courses I gained some knowledge about React.js. I decided to built a little project with it, just for fun. So I built <Link to="/projects/5" className='link'>Random-Password-Generator</Link>.
-                        This project supposed to be a project where I practice my React skills but it really more JavaScript than React. Anywat I built it no matter what.
+                        Then I learned Git and it was project time so I built my first professional project called <Link to="/projects/6" className='link'>CLock</Link>. This project is built only with HTML, CSS and JavaScript.
                         <br />
-                        Then I realize that I wanted a real thing, an unique project. So I built <Link to="/projects/4" className='link'>Memory-Game</Link>. That project really helped my React skills. It was in that project that I really undrestand the use of reusable components and the whole reason of using React.
                         <br />
-                        After that one I went for another, I built <Link to="/projects/3" className='link'>Recipe-Directory</Link>. This one was the one, and by the one I mean more close to a real project. But still there are a lot of things in this project that are different from a real project out there still in that time was a huge seccuss for me.
+                        After my first project, it was time to start the real shit. So I started learning React.js. Why did I choose React? Good questions.
                         <br />
-                        Then I built the next one I realized that the last one wan nothing but shit.
                         <br />
-                        I built <a to="/projects/2" className='link'>Finance-Tracker</a>. Till now, this project is the hardest and the most complex project I've ever built. I was my first time that I had to dealt with authentication. And it was the harderst part.
+                        So after trying a lot of courses I gained some knowledge about React.js. I decided to build a little project with it, just for fun. So I built <Link to="/projects/5" className='link'>Random-Password-Generator</Link>.
+                        This project was supposed to be a project where I practice my React skills but it really was more JavaScript than React in it. I built it anyway.
+                        <br />
+                        <br />
+                        Then I realized that I wanted a real thing, a unique project. So I built <Link to="/projects/4" className='link'>Memory-Game</Link>. That project really helped me with my React skills. It was in that project that I really understood the use of reusable components and the whole reason for using React.
+                        <br />
+                        <br />
+                        After that one I went for another, I built <Link to="/projects/3" className='link'>Recipe-Directory</Link>. This one was the one, and by the one I mean more close to a real project. But still there are a lot of things in this project that are different from a real project out there but still in that time it was a huge success for me.
+                        <br />
+                        <br />
+                        Then I built the next one and I realized that the last one was nothing.
+                        <br />
+                        <br />
+                        I built <Link to="/projects/2" className='link'>Finance-Tracker</Link>. Till now, this project is the hardest and the most complex project I've ever built. It was my first time that I had to deal with authentication. And it was the hardest part.
+                        <br />
                         <br />
                         Honestly till today I don't even know how I built that project, I mean literally if someone wanted me to open the codes and explain them, I got nothing to say. And they'll have nothing either, only God knows how that project is working.
                         <br />
-                        I mean I have more plans for that project, first of all i want to figure out what the hell did I write to make that work and then I want to add a lot of features to it.
                         <br />
-                        So after that one I built <a to="/projects/1" className='link'>Disney-Plus-Clone</a>. This project was really easy and it was really good because after these project I feel like I'm the god of athentication (I'll bet I will laugh at this sentence in future).
+                        I have more plans for that project. First of all, I want to figure out what the hell I wrote to make that work, then I want to add a lot of features to it.
                         <br />
-                        So that's it till now. After those projects I built my portfolio which you're in it already (I'll bet no one's here).
+                        <br />
+                        So after that one I built <Link to="/projects/1" className='link'>Disney-Plus-Clone</Link>. This project was really easy and it was really good because after this project I feel like I'm the god of authentication (I'll bet I will laugh at this sentence in future).
+                        <br />
+                        <br />
+                        So that's it till now. After those projects I built my portfolio which you're in already (I'll bet no one's here).
                     </Text>
                 </Content>
             </AboutMePage>
@@ -89,28 +98,36 @@ const AboutMePage = styled(motion.section)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
+    transition: background .4s;
 
     img {
+        z-index: -9;
         filter: blur(10px);
         position: absolute;
-        inset: 0 0 0 0;
-        z-index: -9;
+        width: 100%;
+        height: 100%;
     }
 `;
 
 const Content = styled(motion.div)`
     width: 80%;
-    height: 60%;
+    height: 80%;
     overflow: hidden;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
+    margin-top: 3rem;
+    z-index: 5;
 
     @media (max-width: 1300px) {
         flex-direction: column;
         justify-content: center;
         align-items: space-between;
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
 `;
 
@@ -124,63 +141,78 @@ const Title = styled(motion.h1)`
     white-space: nowrap;
     width: 40%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 
     @media (max-width: 1300px) {
         width: 100%;
-        height: 40%;
+        height: 30%;
     }
 
-    @media (max-width: 768px) {
-        width: 100%;
+    @media (max-width: 500px) {
         height: 20%;
+        font-size: 2.5rem;
     }
 `;
 
 const Text = styled(motion.p)`
     font-family: 'Outfit', sans-serif;
-    font-weight: 200;
-    font-size: .9rem;
+    font-weight: 300;
+    font-size: 1rem;
     word-spacing: 1px;
-    letter-spacing: -.3px;
-    line-height: 1.7;
-    width: 60%;
-    height: 70%;
-    padding: 0 1rem;
+    letter-spacing: -.5px;
+    line-height: 1.5;
+    width: 50%;
+    height: 60%;
+    background-color: #00000011;
+    border-radius: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 0 3rem;
+    padding: 1.5rem;
+    color: #d8d8d8;
+    user-select: text;
 
     @media (max-width: 1300px) {
-        width: 90%;
-        height: 60%;
+        width: 60%;
+        height: 50%;
     }
 
-    @media (max-width: 768px) {
-        width: 100%;
-        height: 80%;
-        padding: 0 1rem;
+    @media (max-width: 900px) {
+        width: 70%;
+    }
+
+    @media (max-width: 500px) {
+        width: 80%;
+    }
+
+    @media (max-width: 400px) {
+        width: 90%;
     }
 
     /* width */
     ::-webkit-scrollbar {
         width: .2rem;
+        position: absolute;
     }
     
     /* Track */
     ::-webkit-scrollbar-track {
         border-radius: 50px;
-        background: #ffffff11;
+        background: #ffffff08;
     }
     
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: #ffffff44;
+        background: #ffffff33;
         border-radius: 50px;
     }
 
     .link {
         font-weight: 500;
         white-space: nowrap;
+        cursor: pointer;
     }
 `;
 

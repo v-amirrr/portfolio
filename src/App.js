@@ -19,7 +19,7 @@ const App = () => {
     return (
         <>
             <Navbar />
-            <Background><img src='images/bg2.jpg' /></Background>
+            <Background><img src='images/bg.webp' /></Background>
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Home />} />
@@ -38,7 +38,7 @@ const Background = styled.div`
     z-index: -9;
     
     img {
-        filter: blur(50px);
+        filter: blur(20px);
         width: 100%;
         height: 100%;
         z-index: -10;

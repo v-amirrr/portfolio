@@ -19,9 +19,7 @@ const pageVariants = {
 };
 
 const contentVariants = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', delayChildren: 0.5, staggerChildren: 0.2 } },
-    exit: { opacity: 1, transition: { duration: 0.4, type: 'tween' } }
+    visible: { transition: { staggerChildren: 0.2 } }
 };
 
 const projectItemVariants = {
@@ -57,7 +55,7 @@ const ProjectPage = () => {
 
                         <Title variants={projectItemVariants}>
                             <div>
-                                <i onClick={() => navigate(-1)}><IoIosArrowBack /></i>
+                                <motion.i whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }} onClick={() => navigate(-1)}><IoIosArrowBack /></motion.i>
                                 <h1>{data.name}</h1>
                             </div>
                         </Title>
@@ -180,16 +178,15 @@ const Title = styled(motion.div)`
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
             position: absolute;
             left: 20%;
             cursor: pointer;
-            background-color: #ffffff16;
             border-radius: 50%;
             padding: .1rem;
 
             @media (max-width: 745px) {
                 left: 0;
+                font-size: 1.8rem;
             }
         }
     }
@@ -203,7 +200,7 @@ const ExternalLink = styled(motion.div)`
     flex-direction: row;
     margin: 1rem;
 
-    @media (max-width: 400px) {
+    @media (max-width: 600px) {
         flex-direction: column;
     }
 
@@ -226,7 +223,7 @@ const ExternalLink = styled(motion.div)`
             background-color: #ffffff05;
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 600px) {
             padding: 0;
             margin: .4rem 0;
             width: 9rem;

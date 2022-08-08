@@ -23,9 +23,8 @@ const projectsPageVariants = {
 };
 
 const contentVariants = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', delayChildren: 0.5, staggerChildren: 0.2 } },
-    exit: { opacity: 1, transition: { duration: 0.4, type: 'tween' } }
+    visible: { transition: { staggerChildren: 0.1 } },
+    exit: { transition: { staggerChildren: 0.05 } }
 };
 
 const projectVariants = {
@@ -73,19 +72,19 @@ const Content = styled(motion.div)`
     position: relative;
     width: 80%;
     height: 80%;
-    margin-top: 5rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    scroll-behavior: smooth;
+    overflow: hidden;
 
     @media (max-width: 1300px) {
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 90%;
-        height: 90%;
+        width: 85%;
+        height: 80%;
     }
 
     /* width */

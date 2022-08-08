@@ -24,7 +24,8 @@ html {
 body {
     user-select: none;
     -webkit-user-drag: none;
-    background-color: #00000066;
+    background-color: #00000044;
+    overflow: hidden;
 }
 
 :any-link {
