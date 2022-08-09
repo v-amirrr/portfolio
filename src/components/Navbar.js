@@ -22,8 +22,8 @@ const Navbar = () => {
                 <Link to="/about-me">
                     <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/about-me" ? "active" : ""}>about me</motion.div>
                 </Link>
-                <Link to="/">
-                    <motion.div whileTap={{ scale: 0.8 }}>contact</motion.div>
+                <Link to="/contact">
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/contact" ? "active" : ""}>contact</motion.div>
                 </Link>
             </Nav>
         </>

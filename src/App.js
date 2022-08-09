@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Projects from './components/Projects';
 import ProjectPage from './components/ProjectPage';
 import AboutMe from './components/AboutMe';
+import Contact from './components/Contact';
 
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
                     <Route path='/projects' element={<Projects />} />
                     <Route path='/projects/:id' element={<ProjectPage />} />
                     <Route path='/about-me' element={<AboutMe />} />
+                    <Route path='/contact' element={<Contact />} />
                 </Routes>
             </AnimatePresence>
         </>

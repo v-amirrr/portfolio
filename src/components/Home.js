@@ -49,12 +49,6 @@ const Home = () => {
 
                 <SocialMedia variants={socialMediaVariants}>
                     <hr />
-                    <a href='https://www.instagram.com/v_amirrr' target="_blank" >
-                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-                            <img src="/images/instagram.svg" />
-                        </motion.div>
-                    </a>
-                    <hr />
                     <a href='https://github.com/v-amirrr' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src="/images/github.svg" />

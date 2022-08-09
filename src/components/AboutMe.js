@@ -99,15 +99,6 @@ const AboutMePage = styled(motion.section)`
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    transition: background .4s;
-
-    img {
-        z-index: -9;
-        filter: blur(10px);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-    }
 `;
 
 const Content = styled(motion.div)`
