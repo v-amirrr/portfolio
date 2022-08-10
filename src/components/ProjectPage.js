@@ -14,12 +14,14 @@ import { motion } from 'framer-motion';
 
 const pageVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", childrenDelay: 0.5 } },
+    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
 };
 
 const contentVariants = {
-    visible: { transition: { staggerChildren: 0.2 } }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', staggerChildren: 0.2, childrenDelay: 0.5 } },
+    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const projectItemVariants = {
@@ -147,7 +149,7 @@ const Title = styled(motion.div)`
     @media (max-width: 745px) {
         position: absolute;
         top: 0;
-        background-color: #ffffff11;
+        background-color: #ffffff02;
         border-radius: 0 0 30px 30px;
         backdrop-filter: blur(16px) saturate(100%);
         -webkit-backdrop-filter: blur(16px) saturate(100%);
@@ -224,11 +226,8 @@ const ExternalLink = styled(motion.div)`
         }
 
         @media (max-width: 600px) {
-            padding: 0;
             margin: .4rem 0;
-            width: 9rem;
-            height: 2.5rem;
-            font-size: .8rem;
+            width: 13rem;
         }
 
         i {

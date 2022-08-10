@@ -202,8 +202,6 @@ const Project = styled(motion.div)`
     }
 
     @media (max-width: 745px) {
-        transform: scale(1) !important;
-
         div {
             background-size: 100% 100%;
 

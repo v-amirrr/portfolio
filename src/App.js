@@ -21,6 +21,7 @@ const App = () => {
         <>
             <Navbar />
             <Background><img src='images/bg.webp' /></Background>
+            
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Home />} />
