@@ -40,7 +40,7 @@ const Home = () => {
                         </Button>
                     </Link>
 
-                    <a href='https://drive.google.com/file/d/1zkA2SZ9vHBRix_V7fClJcWDvTNXIdkBc/view?usp=sharing' target="_blank">
+                    <a href='https://drive.google.com/file/d/1wZJ0K-Fez_pX9yQO2U_INKqFZbfSclMm/view?usp=sharing' target="_blank">
                         <Button whileTap={{ scale: 0.8 }}>
                             resume
                         </Button>
