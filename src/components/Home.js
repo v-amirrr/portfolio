@@ -55,7 +55,7 @@ const Home = () => {
                         </motion.div>
                     </a>
                     <hr />
-                    <a href='www.linkedin.com/in/amirvalizadeh' target="_blank" >
+                    <a href='https://linkedin.com/in/amirvalizadeh' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src="/images/linkedin.svg" />
                         </motion.div>
