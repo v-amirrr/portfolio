@@ -8,14 +8,14 @@ import { motion } from 'framer-motion';
 
 const homePageVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", staggerChildren: 0.5 } },
+    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", childrenDelay: 0.5 } },
     exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
 };
 
 const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.4 } }
+    hidden: { opacity: 0, scaleY: 0 },
+    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.4 } },
+    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.4 } }
 };
 
 const socialMediaVariants = {

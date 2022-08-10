@@ -9,11 +9,12 @@ import { TbCornerDownRight } from 'react-icons/tb';
 const contact = [
     { name: "email", link: "mailto:amirrr.valizadeh@gmail.com", username: "amirrr.valizadeh@gmail.com", img: "/images/gmail.svg" },
     { name: "linkedin", link: "https://linkedin.com/in/amirvalizadeh", username: "Amir Valizadeh", img: "/images/linkedin.svg" },
-    { name: "skype", link: "https://join.skype.com/invite/MNV0cL3D8Jwf", username: "live:.cid.98798c4805efe65a", img: "/images/skype.svg" },
+    { name: "github", link: "https://github.com/v-amirrr", username: "v_amirrr", img: "/images/github.svg" },
     { name: "telegram", link: "https://t.me/v_amirrr", username: "v_amirrr", img: "/images/telegram.svg" },
-    { name: "whatsapp", link: "https://wa.me/9330938960", username: "amir", img: "/images/whatsapp.svg" },
     { name: "instagram", link: "https://www.instagram.com/v_amirrr", username: "v_amirrr", img: "/images/instagram.svg" },
+    { name: "skype", link: "https://join.skype.com/invite/MNV0cL3D8Jwf", username: "live:.cid.98798c4805efe65a", img: "/images/skype.svg" },
     { name: "twitter", link: "https://twitter.com/v_amirrr", username: "v_amirrr", img: "/images/twitter.svg" },
+    { name: "whatsapp", link: "https://wa.me/9330938960", username: "amir", img: "/images/whatsapp.svg" },
 ];
 
 const pageVariants = {
