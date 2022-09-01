@@ -2,32 +2,26 @@ import React, { useState, useEffect } from 'react';
 
 import { useParams, useNavigate } from "react-router-dom";
 
-import styled from 'styled-components';
+import { projects } from '../projectsData';
 
-import { IoIosArrowBack } from 'react-icons/io';
+import { BiArrowBack } from 'react-icons/bi';
 import { TbCornerDownRight } from 'react-icons/tb';
 import { SiGithub } from 'react-icons/si';
+import { AiFillCaretRight } from 'react-icons/ai';
 
-import { projects } from './Projects';
-
-import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const pageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", childrenDelay: 0.5 } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, x: -20, transition: { duration: 0.2, type: 'tween' } }
 };
 
-const contentVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', staggerChildren: 0.2, childrenDelay: 0.5 } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween' } }
-};
-
-const projectItemVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.4, type: 'tween' } }
+const toggleSectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 5, transition: { duration: 0.2 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
 };
 
 const ProjectPage = () => {
@@ -35,6 +29,11 @@ const ProjectPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [data, setData] = useState(null);
+    
+    const [techShow, setTechShow] = useState(false);
+    const [whatShow, setWhatShow] = useState(false);
+    const [howShow, setHowShow] = useState(false);
+    const [whyShow, setWhyShow] = useState(false);
 
     useEffect(() => {
         setData(null);
@@ -45,40 +44,125 @@ const ProjectPage = () => {
         });
     }, [id]);
 
+    const setTechShowTrue = () => {
+        setTechShow(prevState => !prevState);
+        setWhatShow(false);
+        setHowShow(false);
+        setWhyShow(false);
+    };
+
+    const setWhatShowTrue = () => {
+        setTechShow(false);
+        setWhatShow(prevState => !prevState);
+        setHowShow(false);
+        setWhyShow(false);
+    };
+    
+    const setHowShowTrue = () => {
+        setTechShow(false);
+        setWhatShow(false);
+        setHowShow(prevState => !prevState);
+        setWhyShow(false);
+    };
+    
+    const setWhyShowTrue = () => {
+        setTechShow(false);
+        setWhatShow(false);
+        setHowShow(false);
+        setWhyShow(prevState => !prevState);
+    };
+
     return (
         <>
             {
                 data
                 &&
                 <Page initial='hidden' animate='visible' exit='exit' variants={pageVariants}>
-                    <Content variants={contentVariants} img={data.img}>
+                    <Content img={data.image}>
+                        
+                        <img className='background' src={data.image} alt="background" />
 
-                        <img className='background' src={data.img} alt="background" />
-
-                        <Title variants={projectItemVariants}>
-                            <div>
-                                <motion.i whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.8 }} onClick={() => navigate(-1)}><IoIosArrowBack /></motion.i>
-                                <h1>{data.name}</h1>
-                            </div>
+                        <Title>
+                            <h1>{data.title}</h1>
+                            <motion.div className='back-button' whileTap={{ scale: 0.8 }} onClick={() => navigate(-1)}>
+                                <div>
+                                    <i><BiArrowBack /></i>
+                                    <p>back to previous page</p>
+                                </div>
+                            </motion.div>
                         </Title>
 
-                        <Tech variants={projectItemVariants}>
-                            <h4>technologies</h4>
-                            <span>
-                                {
-                                    data.technologies.map(item => (
-                                        <img src={item} alt="technology" />
-                                    ))
-                                }
-                            </span>
-                        </Tech>
+                        <div className='toggle-sections'>
+                            <ToggleSection show={techShow}>
+                                <div className='title' onClick={setTechShowTrue}>
+                                    <i><AiFillCaretRight /></i>
+                                    <h4>technologies</h4>
+                                </div>
+                                <AnimatePresence>
+                                    {
+                                        techShow
+                                        &&
+                                        <motion.div className='images' initial='hidden' animate='visible' exit='exit' variants={toggleSectionVariants}>
+                                            {
+                                                data.technologies.map(tech => (
+                                                    <img src={tech} />
+                                                ))
+                                            }
+                                        </motion.div>
+                                    }
+                                </AnimatePresence>
+                            </ToggleSection>
 
-                        <Text variants={projectItemVariants}>
-                            <h4>description</h4>
-                            <p>{data.description}</p>
-                        </Text>
+                            <ToggleSection show={whatShow}>
+                                <div className='title' onClick={setWhatShowTrue}>
+                                    <i><AiFillCaretRight /></i>
+                                    <h4>what is this project?</h4>
+                                </div>
+                                <AnimatePresence>
+                                    {
+                                        whatShow
+                                        &&
+                                        <motion.div className='text' initial='hidden' animate='visible' exit='exit' variants={toggleSectionVariants}>
+                                            {data.what}
+                                        </motion.div>
+                                    }
+                                </AnimatePresence>
+                            </ToggleSection>
 
-                        <ExternalLink variants={projectItemVariants}>
+                            <ToggleSection show={howShow}>
+                                <div className='title' onClick={setHowShowTrue}>
+                                    <i><AiFillCaretRight /></i>
+                                    <h4>how can you use this project?</h4>
+                                </div>
+                                <AnimatePresence>
+                                    {
+                                        howShow
+                                        &&
+                                        <motion.div className='text' initial='hidden' animate='visible' exit='exit' variants={toggleSectionVariants}>
+                                            {data.how}
+                                        </motion.div>
+                                    }
+                                </AnimatePresence>
+                            </ToggleSection>
+
+                            <ToggleSection show={whyShow}>
+                                <div className='title' onClick={setWhyShowTrue}>
+                                    <i><AiFillCaretRight /></i>
+                                    <h4>why did I build this project?</h4>
+                                </div>
+                                <AnimatePresence>
+                                    {
+                                        whyShow
+                                        &&
+                                        <motion.div className='text' initial='hidden' animate='visible' exit='exit' variants={toggleSectionVariants}>
+                                            {data.why}
+                                        </motion.div>
+                                    }
+                                </AnimatePresence>
+                            </ToggleSection>
+                        </div>
+
+                        <ExternalLink>
                             <a href={data.github} target="_blank">
                                 <motion.div whileTap={{ scale: 0.8 }}>
                                     <i><SiGithub /></i>
@@ -93,6 +177,7 @@ const ProjectPage = () => {
                                 </motion.div>
                             </a>
                         </ExternalLink>
+
                     </Content>
                 </Page>
             }
@@ -109,200 +194,271 @@ const Page = styled(motion.section)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #000000dd;
-    z-index: 999;
+    z-index: 9;
     font-family: 'Outfit', sans-serif;
 `;
 
-const Content = styled(motion.div)`
-    height: max-content;
-    border-radius: 10px;
-    padding: 1rem;
+const Content = styled.div`
+    background-color: #000000aa;
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    backdrop-filter: blur(20px) saturate(100%);
-    -webkit-backdrop-filter: blur(16px) saturate(100%);
     width: 100%;
     height: 100%;
-    border: none;
-    border-radius: 0;
-
+    
     .background {
         position: absolute;
         inset: 0 0 0 0;
         width: 100%;
         height: 100%;
         z-index: -9;
-        filter: blur(20px);
-        opacity: 0.4;
-    }
-`;
-
-const Title = styled(motion.div)`
-    padding: 1rem;
-    width: 100%;
-    margin-bottom: 1rem;
-
-    @media (max-width: 745px) {
-        position: absolute;
-        top: 0;
-        background-color: #ffffff02;
-        border-radius: 0 0 30px 30px;
-        backdrop-filter: blur(16px) saturate(100%);
-        -webkit-backdrop-filter: blur(16px) saturate(100%);
+        filter: blur(10px);
     }
 
-    div {
-        position: relative;
+    .toggle-sections {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
+        flex-direction: column;
         width: 100%;
-
-        h1 {
-            letter-spacing: -2px;
-            word-spacing: 10px;
-            white-space: nowrap;
-            font-size: 2rem;
-
-            @media (max-width: 745px) {
-                font-size: 1.5rem;
-                letter-spacing: -1px;
-            }
-        }
-
-        i {
-            font-size: 2.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            left: 20%;
-            cursor: pointer;
-            border-radius: 50%;
-            padding: .1rem;
-
-            @media (max-width: 745px) {
-                left: 0;
-                font-size: 1.8rem;
-            }
-        }
     }
 `;
 
-const ExternalLink = styled(motion.div)`
-    width: 80%;
+const Title = styled.div`
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    margin: 1rem;
 
-    @media (max-width: 600px) {
-        flex-direction: column;
+    h1 {
+        letter-spacing: -2px;
+        word-spacing: 5px;
+        white-space: nowrap;
+        font-size: 2rem;
+
+        @media (max-width: 745px) {
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+        }
     }
 
-    div {
+    .back-button {
+        position: absolute;
+        top: 0;
+        left: .5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
-        background-color: #ffffff11;
-        border: 1px solid #ffffff09;
-        border-radius: 10px;
         padding: .5rem;
-        margin: 0 .2rem;
-        cursor: pointer;
+        margin-top: .8rem;
         color: #c1c1c1;
-        white-space: nowrap;
-        transition: background .4s;
+        background-color: #ffffff15;
+        cursor: pointer;
+        border-radius: 40px;
+        transition: padding .3s;
 
-        &:hover {
-            background-color: #ffffff05;
-        }
-
-        @media (max-width: 600px) {
-            margin: .4rem 0;
-            width: 13rem;
-        }
-
-        i {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            margin-right: .3rem;
-            font-size: 1.5rem;
-
-            @media (max-width: 400px) {
-                font-size: 1.2rem;
+        @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
+            &:hover {
+                padding-right: 10.5rem;
+    
+                p {
+                    left: 130%;
+                    opacity: 1;
+                }
             }
         }
 
-        p {
-            font-weight: 600;
+        div {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                font-size: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                transition: font-size .3s;
+            }
+        
+            p {
+                text-transform: capitalize;
+                word-spacing: 2px;
+                letter-spacing: -1px;
+                font-weight: 600;
+                position: absolute;
+                left: 50%;
+                opacity: 0;
+                white-space: nowrap;
+                transition: opacity .2s, left .3s;
+            }
         }
     }
 `;
 
-const Tech = styled(motion.div)`
-    width: 80%;
+const ToggleSection = styled.div`
+    width: 100%;
+    height: ${props => props.show ? "8rem" : "1.5rem"};
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     margin: 1rem;
+    position: relative;
+    transition: height .3s;
 
-    h4 {
+    .title {
         text-transform: uppercase;
-        color: #c1c1c1;
-        margin-bottom: .5rem;
+        color: ${props => props.show ? "#ddd" : "#999"};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        user-select: none;
+        cursor: pointer;
+        transition: color .4s;
+        white-space: nowrap;
+
+        h4 {
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            word-spacing: 5px;
+        }
+
+        i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-right: .4rem;
+            transform: ${props => props.show ? "rotate(90deg)" : "rotate(0deg)"};
+            transition: transform .2s;
+        }
     }
 
-    span {
+    .text {
+        font-size: 1rem;
+        font-weight: 300;
+        word-spacing: 5px;
+        width: 60%;
+        text-align: center;
+        color: #999;
+    }
+
+    .images {
         text-align: center;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 60%;
+        position: absolute;
+        top: 20%;
 
         img {
             width: 2rem;
             margin: 0 .2rem;
-
+            
             @media (max-width: 745px) {
                 width: 1.5rem;
                 margin: 0 .1rem;
             }
         }
     }
+
+    @media (max-width: 1000px) {
+        .text {
+            font-size: .8rem;
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 540px) {
+        .title {
+            h4 {
+                font-size: 1rem;
+            }
+        }
+
+        .text {
+            font-size: .7rem;
+            width: 90%;
+        }
+    }
+
+    @media (max-width: 400px) {
+        height: ${props => props.show ? "7.5rem" : "1.5rem"};
+
+        .title {
+            h4 {
+                font-size: .9rem;
+            }
+        }
+
+        .text {
+            font-size: .6rem;
+            width: 100%;
+        }
+    }
 `;
 
-const Text = styled(motion.div)`
-    width: 80%;
+const ExternalLink = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    margin: 1rem;
+    padding: 1rem;
 
-    h4 {
-        text-transform: uppercase;
+    div {
+        width: 12rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff08;
+        border: solid 1px #ffffff11;
+        border-radius: 10px;
+        cursor: pointer;
         color: #c1c1c1;
-        margin-bottom: .5rem;
-    }
+        white-space: nowrap;
+        padding: .5rem 0;
+        margin: 0 .8rem;
+        transition: background .2s;
 
-    p {
-        font-size: .8rem;
-        width: 50%;
-        text-align: center;
-
-        @media (max-width: 745px) {
-            width: 100%;
+        @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
+            &:hover {
+                background-color: #ffffff11;
+            }
         }
+        
+        i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: .3rem;
+            font-size: 1.5rem;
+        }
+
+        p {
+            text-transform: capitalize;
+            letter-spacing: -1px;
+            word-spacing: 2px;
+            font-weight: 600;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        flex-direction: column;
+
+        div {
+            margin: .4rem 0;
+            width: 13rem;
+        }
+    }
+        
+    @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
+        margin-bottom: 3rem;
     }
 `;
 
