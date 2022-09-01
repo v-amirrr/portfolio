@@ -7,33 +7,28 @@ import { projects } from '../projectsData';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-const projectsPageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, type: 'tween', when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, type: 'tween', when: "afterChidren" } }
-};
-
 const contentVariants = {
-    visible: { transition: { staggerChildren: 0.05 } },
-    exit: { transition: { staggerChildren: 0.03 } }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.05, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.03, when: "afterChidren" } }
 };
 
 const projectVariants = {
     hidden: { opacity: 0, y: -50},
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3, type: 'tween' } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.3, type: 'tween' } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const Projects = () => {
     return (
         <>
-            <ProjectsPage initial='hidden' animate='visible' exit='exit' variants={projectsPageVariants}>
+            <ProjectsPage initial='hidden' animate='visible' exit='exit'>
                   <Content variants={contentVariants}>
                     {
                         projects.map(item => (
                             <Link to={"/projects/" + item.url}>
                                 <Project whileTap={{ scale: 0.8 }} variants={projectVariants}>
-                                    <img src={item.image} />
+                                    <img src={item.image} alt="project-image" />
                                     <div>
                                         <h4>{item.title}</h4>
                                         <p>{item.what}</p>

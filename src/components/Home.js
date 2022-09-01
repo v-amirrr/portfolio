@@ -8,8 +8,8 @@ import { motion } from 'framer-motion';
 
 const homePageVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren", childrenDelay: 0.5 } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
+    visible: { opacity: 1, transition: { duration: 0.2, type: 'tween', when: "beforeChildren", childrenDelay: 0.5 } },
+    exit: { opacity: 0, transition: { duration: 0.2, type: 'tween', when: "afterChildren" } }
 };
 
 const titleVariants = {

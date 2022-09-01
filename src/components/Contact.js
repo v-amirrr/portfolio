@@ -17,21 +17,16 @@ const contact = [
     { name: "whatsapp", link: "https://wa.me/9330938960", username: "amir", img: "/images/whatsapp.svg" },
 ];
 
-const pageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween', when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween', when: "afterChildren" } }
-};
-
 const contentVariants = {
-    visible: { transition: { staggerChildren: 0.1 } },
-    exit: { transition: { staggerChildren: 0.05 } }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.05, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.05, when: "afterChidren" } }
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.4, type: 'tween' } }
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, y: 20, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const Contact = () => {
@@ -42,12 +37,12 @@ const Contact = () => {
 
     return (
         <>
-            <ContactPage initial='hidden' animate='visible' exit='exit' variants={pageVariants}>
+            <ContactPage initial='hidden' animate='visible' exit='exit'>
                 <Content variants={contentVariants}>
                     {
                         contact.map(item => (
                             <motion.div variants={itemVariants}>
-                                <img src={item.img} />
+                                <img src={item.img} alt="contact-icon" />
 
                                 <a href={item.link} target="_blank">
                                     <motion.span whileTap={{ scale: 0.8 }}>
@@ -86,7 +81,7 @@ const ContactPage = styled(motion.section)`
 
 const Content = styled(motion.div)`
     padding: 0 2rem;
-    height: 60%;
+    height: 70%;
     margin-top: 3rem;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -131,7 +126,6 @@ const Content = styled(motion.div)`
         @media (max-width: 700px) {
             width: 18rem;
             height: 3.5rem;
-            background-color: #ffffff05;
         }
 
         @media (hover: hover) and (pointer: fine) {
