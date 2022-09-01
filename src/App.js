@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import styled from 'styled-components';
 
@@ -13,14 +13,45 @@ import ProjectPage from './components/ProjectPage';
 import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
 
+const bgVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, transition: { duration: 0.2, type: 'tween' } }
+};
+
 const App = () => {
 
     const location = useLocation();
 
+    const [widthSize, setWidthSize] = useState(document.documentElement.offsetWidth);
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setWidthSize(document.documentElement.offsetWidth);
+        });
+    }, []);
+
     return (
         <>
             <Navbar />
-            <Background><img src='images/bg.webp' /></Background>
+
+            <AnimatePresence>
+            {
+                widthSize >= 600
+                ?
+                    location.pathname == "/" || location.pathname == "/about-me"
+                    ?
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="home"><img src='/images/bg-home-desktop.webp' /></Background>
+                    :
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="projects"><img src='/images/bg-projects-desktop.webp' /></Background>
+                :
+                    location.pathname == "/" || location.pathname == "/about-me"
+                    ?
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="home"><img src='/images/bg-home-mobile.webp' /></Background>
+                    :
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="projects"><img src='/images/bg-projects-mobile.webp' /></Background>
+            }
+            </AnimatePresence>
             
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
@@ -35,7 +66,7 @@ const App = () => {
     );
 };
 
-const Background = styled.div`
+const Background = styled(motion.div)`
     position: absolute;
     inset: 0 0 0 0;
     z-index: -9;

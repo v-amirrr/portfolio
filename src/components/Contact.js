@@ -82,7 +82,6 @@ const ContactPage = styled(motion.section)`
     align-items: center;
     flex-direction: column;
     overflow: hidden;
-    background-color: #000000aa;
 `;
 
 const Content = styled(motion.div)`

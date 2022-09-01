@@ -56,7 +56,6 @@ const ProjectsPage = styled(motion.section)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #00000077;
 `;
 
 const Content = styled(motion.div)`

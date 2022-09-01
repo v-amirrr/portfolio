@@ -18,12 +18,10 @@ html {
     overflow: hidden;
     scroll-behavior: smooth;
     height: 100%;
-    background-color: #000000;
 }
 
 body {
     -webkit-user-drag: none;
-    background-color: #00000044;
     overflow: hidden;
 }
 
