@@ -1,49 +1,87 @@
 import React from 'react';
 
 import styled from 'styled-components';
-
-import { Link } from "react-router-dom";
-
 import { motion } from 'framer-motion';
 
-const homePageVariants = {
+const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, type: 'tween', when: "beforeChildren", childrenDelay: 0.5 } },
-    exit: { opacity: 0, transition: { duration: 0.2, type: 'tween', when: "afterChildren" } }
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } }
 };
 
-const titleVariants = {
-    hidden: { opacity: 0, scaleY: 0 },
-    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.4 } },
-    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.4 } }
+const itemVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, y: 20, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const socialMediaVariants = {
     hidden: { opacity: 0, scaleY: 0 },
-    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.4 } },
-    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.4 } }
-}
+    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.2 } },
+    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.2 } }
+};
 
 const Home = () => {
     return (
         <>
-            <HomePage initial='hidden' animate='visible' exit='exit' variants={homePageVariants}>
-                <Title variants={titleVariants}>
-                        <h1>Hi, I'm Amir.</h1>
-                        <h1>I'm a Front-End developer.</h1>
+            <HomePage initial='hidden' animate='visible' exit='exit' variants={contentVariants}>
+                <Title>
+                    <motion.h1 className='title-text' variants={itemVariants}>
+                        <span>M</span>
+                        <span>y </span>
+                        <span>N</span>
+                        <span>a</span>
+                        <span>m</span>
+                        <span>e </span>
+                        <span>I</span>
+                        <span>s</span>
+
+                        <div className='title-name'>
+                            <span>A </span>
+                            <span>M</span>
+                            <span>I</span>
+                            <span>R</span>
+                        </div>
+
+                        <span>.</span>
+                    </motion.h1>
+
+                    <motion.h1 className='title-text' variants={itemVariants}>
+                        <span>I</span>
+                        <span>'</span>
+                        <span>m </span>
+                        <span>a</span>
+
+                        <div className='title-field'>
+                            <span>F</span>
+                            <span>R</span>
+                            <span>O</span>
+                            <span>N</span>
+                            <span>T</span>
+                            <span>-</span>
+                            <span>E</span>
+                            <span>N</span>
+                            <span>D</span>
+                        </div>
+
+                        <span>d</span>
+                        <span>e</span>
+                        <span>v</span>
+                        <span>e</span>
+                        <span>l</span>
+                        <span>o</span>
+                        <span>p</span>
+                        <span>e</span>
+                        <span>r</span>
+                        <span>.</span>
+                    </motion.h1>
                 </Title>
 
-                <Buttons variants={titleVariants}>
-                    <Link to="/projects">
-                        <Button whileTap={{ scale: 0.8 }}>
-                            let's go
-                        </Button>
-                    </Link>
-
+                <Buttons variants={itemVariants}>
                     <a href='https://drive.google.com/file/d/1wZJ0K-Fez_pX9yQO2U_INKqFZbfSclMm/view?usp=sharing' target="_blank">
-                        <Button whileTap={{ scale: 0.8 }}>
-                            resume
-                        </Button>
+                        <motion.div whileTap={{ scale: 0.8 }}>
+                            <p>see my resume</p>
+                        </motion.div>
                     </a>
                 </Buttons>
 
@@ -87,75 +125,120 @@ const Title = styled(motion.div)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 1rem;
-    
-    h1 {
-        font-family: 'Outfit', sans-serif;
-        line-height: 1.5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        white-space: nowrap;
+    margin-bottom: 1.2rem;
+    font-family: 'Outfit', sans-serif;
+    line-height: .9;
+    white-space: nowrap;
+
+    span {
+        transition: color .2s;
         
-        &:nth-child(1) {
-            font-size: 3rem;
-            word-spacing: 10px;
-            letter-spacing: -2px;
+        &:hover {
             color: #fff;
         }
+    }
+
+    .title-text {
+        font-size: 1.2rem;
+        font-weight: 200;
+        word-spacing: 2px;
+        color: #88888888;
+        display: inline;
+    }
+    
+    .title-name {
+        display: inline;
+        font-size: 9rem;
+        font-weight: 900;
+        letter-spacing: -1.16rem;
+        color: #88888859;
+        text-shadow: #00000059 0px 4px 12px;
+        margin-left: .2rem;
+        margin-right: 1rem;
+
+        span {
+            transition: color .2s;
+            &:hover {
+                color: #888;
+            }
+        }
+    }
+
+    .title-field {
+        display: inline;
+        font-size: 3.5rem;
+        font-weight: 900;
+        letter-spacing: -.3rem;
+        color: #88888833;
+        text-shadow: #00000055 0px 4px 12px;
+        margin: 0 .5rem;
+
+        span {
+            transition: color .2s;
+            &:hover {
+                color: #888;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .title-text {
+            font-size: .8rem;
+            word-spacing: 1px;
+        }
         
-        &:nth-child(2) {
-            font-size: 1rem;
-            color: #f0f0f0;
-            font-weight: 500;
+        .title-name {
+            font-size: 6.5rem;
+            letter-spacing: -.8rem;
+        }
+
+        .title-field {
+            font-size: 2.5rem;
+            letter-spacing: -.2rem;
+            margin: 0 .5rem;
         }
     }
 `;
 
 const Buttons = styled(motion.div)`
-    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row-reverse;
-`;
-
-const Button = styled(motion.button)`
-    all: unset;
     font-family: 'Outfit', sans-serif;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 900 !important;
-    border-radius: 10px;
-    width: 6rem;
-    height: 2.5rem;
-    word-spacing: 5px;
-    letter-spacing: -1px;
-    white-space: nowrap;
-    cursor: pointer;
-    text-align: center;
-    margin: 0 1rem;    
-    backdrop-filter: blur(10px) saturate(150%);
-    -webkit-backdrop-filter: blur(10px) saturate(150%);
-    background-color: #00000055;
-    transition: background-color .4s, box-shadow .4s, border .4s;
-    box-shadow: #00000011 0px 4px 12px;
-    border: solid 1px #ffffff11;
-    color: #fff;
-    
-    &:hover {
-        background-color: #ffffff11;
-        border: solid 1px #ffffff19;
-        box-shadow: #00000088 0px 4px 12px;
-    }
 
-    &:first-child {
-        font-weight: 900;
-    }
-    
-    &:last-child {
-        font-weight: 300;
+    div {
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 500;
+        border: solid 1px #ffffff10;
+        border-radius: 15px;
+        word-spacing: 2px;
+        letter-spacing: -1px;
+        white-space: nowrap;
+        cursor: pointer;
+        text-align: center;
+        padding: .7rem 6rem;
+        background-color: #00000022;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: letter-spacing .4s;
+        box-shadow: #00000055 0px 5px 10px;
+        
+        p {
+            color: #aaa;
+            text-shadow: #000 0px 12px 12px;
+        }
+
+        @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
+            &:hover {
+                letter-spacing: 3px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            padding: .7rem 5rem;
+        }
     }
 `;
 

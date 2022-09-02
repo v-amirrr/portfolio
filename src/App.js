@@ -15,8 +15,8 @@ import Contact from './components/Contact';
 
 const bgVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, type: 'tween' } },
-    exit: { opacity: 0, transition: { duration: 0.2, type: 'tween' } }
+    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const App = () => {

@@ -21,6 +21,7 @@ html {
 }
 
 body {
+    user-select: none;
     -webkit-user-drag: none;
     overflow: hidden;
 }
