@@ -139,7 +139,7 @@ const Title = styled(motion.div)`
     }
 
     .title-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         font-weight: 200;
         word-spacing: 2px;
         color: #88888888;
@@ -148,7 +148,7 @@ const Title = styled(motion.div)`
     
     .title-name {
         display: inline;
-        font-size: 9rem;
+        font-size: 9.2rem;
         font-weight: 900;
         letter-spacing: -1.16rem;
         color: #88888859;
@@ -166,12 +166,12 @@ const Title = styled(motion.div)`
 
     .title-field {
         display: inline;
-        font-size: 3.5rem;
+        font-size: 3.4rem;
         font-weight: 900;
         letter-spacing: -.3rem;
         color: #88888833;
         text-shadow: #00000055 0px 4px 12px;
-        margin: 0 .5rem;
+        margin: 0 .2rem;
 
         span {
             transition: color .2s;
@@ -210,7 +210,7 @@ const Buttons = styled(motion.div)`
         text-transform: uppercase;
         font-size: 1.2rem;
         font-weight: 500;
-        border: solid 1px #ffffff10;
+        border: solid 2px #ffffff10;
         border-radius: 15px;
         word-spacing: 2px;
         letter-spacing: -1px;
@@ -222,22 +222,27 @@ const Buttons = styled(motion.div)`
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: letter-spacing .4s;
+        transition: background .4s, border .4s, color .4s, padding .4s, letter-spacing .4s;
         box-shadow: #00000055 0px 5px 10px;
+        color: #aaa;
         
         p {
-            color: #aaa;
             text-shadow: #000 0px 12px 12px;
         }
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
             &:hover {
-                letter-spacing: 3px;
+                color: #ccc;
+                background-color: #ffffff02;
+                border: solid 2px #ffffff15;
+                padding: .7rem 7rem;
+                letter-spacing: 1px;
             }
         }
 
         @media (max-width: 900px) {
             padding: .7rem 5rem;
+            font-size: 1rem;
         }
     }
 `;

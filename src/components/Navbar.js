@@ -1,9 +1,8 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { useLocation, Link } from 'react-router-dom';
 
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -48,14 +47,14 @@ const Nav = styled(motion.nav)`
     transform: translate(-50%, 0);
     padding: 1rem;
     border-radius: 0 0 10px 10px;
-    background-color: #e6e6e608;
+    background-color: #e6e6e602;
     box-shadow: #00000011 0px 4px 12px;
-    border: solid 1px #ffffff11;
+    border: solid 1px #ffffff10;
     
     div {
         padding: 0 .8rem;
         cursor: pointer;        
-        color: #c1c1c1;
+        color: #aaa;
         transition: color .4s, padding .4s, letter-spacing .4s;
         white-space: nowrap;
 

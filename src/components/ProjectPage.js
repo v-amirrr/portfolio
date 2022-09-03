@@ -202,7 +202,7 @@ const Content = styled.div`
     background-color: #000000aa;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
@@ -223,20 +223,28 @@ const Content = styled.div`
         align-items: center;
         flex-direction: column;
         width: 100%;
+        margin: 8rem 0 3rem 0;
     }
 `;
 
 const Title = styled.div`
     padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
 
     h1 {
         letter-spacing: -2px;
         word-spacing: 5px;
         white-space: nowrap;
         font-size: 2rem;
+        font-weight: 900;
+        color: #eee;
+        text-shadow: #00000055 0px 4px 12px;
 
         @media (max-width: 745px) {
             font-size: 1.5rem;
@@ -247,13 +255,13 @@ const Title = styled.div`
     .back-button {
         position: absolute;
         top: 0;
-        left: .5rem;
+        left: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: .5rem;
-        margin-top: .8rem;
-        color: #c1c1c1;
+        margin: .8rem;
+        color: #aaa;
         background-color: #ffffff15;
         cursor: pointer;
         border-radius: 40px;
@@ -313,7 +321,7 @@ const ToggleSection = styled.div`
 
     .title {
         text-transform: uppercase;
-        color: ${props => props.show ? "#ddd" : "#999"};
+        color: ${props => props.show ? "#ddd" : "#666"};
         display: flex;
         justify-content: center;
         align-items: center;

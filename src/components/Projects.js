@@ -9,14 +9,14 @@ import { motion } from 'framer-motion';
 
 const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.05, when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.03, when: "afterChidren" } }
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.04, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.02, when: "afterChidren" } }
 };
 
 const projectVariants = {
     hidden: { opacity: 0, y: -50},
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const Projects = () => {
@@ -26,7 +26,7 @@ const Projects = () => {
                   <Content variants={contentVariants}>
                     {
                         projects.map(item => (
-                            <Link to={"/projects/" + item.url}>
+                            <Link to={"/projects/" + item.url} key={item.url}>
                                 <Project whileTap={{ scale: 0.8 }} variants={projectVariants}>
                                     <img src={item.image} alt="project-image" />
                                     <div>
@@ -93,9 +93,7 @@ const Project = styled(motion.div)`
     border-radius: 10px;
     white-space: nowrap;
     margin: 1rem;
-    border: solid 1px #ffffff20;
-    backdrop-filter: blur(50px) saturate(200%);
-    -webkit-backdrop-filter: blur(50px) saturate(2000%);
+    border: solid 1px #ffffff15;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -108,7 +106,6 @@ const Project = styled(motion.div)`
     img {
         width: 100%;
         height: 100%;
-        z-index: -999;
         position: absolute;
         inset: 0 0 0 0;
         border-radius: 10px;

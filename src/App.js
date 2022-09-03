@@ -15,8 +15,8 @@ import Contact from './components/Contact';
 
 const bgVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, transition: { duration: 0.3, type: 'tween' } },
+    exit: { opacity: 0, transition: { duration: 0.3, type: 'tween' } }
 };
 
 const App = () => {
@@ -37,19 +37,19 @@ const App = () => {
 
             <AnimatePresence>
             {
-                widthSize >= 600
+                widthSize >= 900
                 ?
-                    location.pathname == "/" || location.pathname == "/about-me"
+                    location.pathname == "/"
                     ?
-                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="home"><img src='/images/bg-home-desktop.webp' /></Background>
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="light"><img src='/images/bg-light-desktop.webp' alt="background" /></Background>
                     :
-                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="projects"><img src='/images/bg-projects-desktop.webp' /></Background>
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-desktop.webp' alt="background" /></Background>
                 :
                     location.pathname == "/" || location.pathname == "/about-me"
                     ?
-                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="home"><img src='/images/bg-home-mobile.webp' /></Background>
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="light"><img src='/images/bg-light-mobile.webp' alt="background" /></Background>
                     :
-                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="projects"><img src='/images/bg-projects-mobile.webp' /></Background>
+                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-mobile.webp' alt="background" /></Background>
             }
             </AnimatePresence>
             

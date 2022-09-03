@@ -1,10 +1,10 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
-import { motion } from 'framer-motion';
 import { AiOutlineCopy } from 'react-icons/ai';
 import { TbCornerDownRight } from 'react-icons/tb';
+
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const contact = [
     { name: "email", link: "mailto:amirrr.valizadeh@gmail.com", username: "amirrr.valizadeh@gmail.com", img: "/images/gmail.svg" },
@@ -145,14 +145,13 @@ const Content = styled(motion.div)`
         span {
             margin: 0 .5rem;
             font-family: 'Outfit', sans-serif;
-            font-weight: 700;
+            font-weight: 200;
             text-transform: uppercase;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            color: #c1c1c1;
-            letter-spacing: -1px;
+            color: #aaa;
             transition: color .4s;
             cursor: pointer;
             white-space: nowrap;
@@ -170,7 +169,7 @@ const Content = styled(motion.div)`
                 justify-content: center;
                 align-items: center;
                 flex-direction: row;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
 
                 @media (max-width: 700px) {
                     font-size: 1rem;

@@ -1,21 +1,20 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import { Link } from "react-router-dom";
 
+import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const titleVariants = {
-    hidden: { opacity: 0, x: -50, scaleX: 0.8 },
-    visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -50, scaleX: 0.8, transition: { duration: 0.4, type: 'tween' } }
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, x: -50, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const textVariants = {
-    hidden: { opacity: 0, x: 50, scaleX: 0.8 },
-    visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: 50, scaleX: 0.8, transition: { duration: 0.4, type: 'tween' } }
+    hidden: { opacity: 0, x: 50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, x: 50, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const AboutMe = () => {
@@ -161,16 +160,15 @@ const Text = styled(motion.p)`
     line-height: 1.5;
     width: 50%;
     height: 60%;
-    background-color: #00000004;
-    border: solid 1px #ffffff10;
+    background-color: #ffffff08;
+    border: solid 1px #ffffff05;
     border-radius: 10px;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 1.5rem;
-    color: #ccc;
+    padding: 2rem;
+    color: #bbb;
     user-select: text;
-    backdrop-filter: blur(25px) saturate(100%);
-    -webkit-backdrop-filter: blur(25px) saturate(100%);
+    box-shadow: #00000033 0px 5px 10px;
 
     @media (max-width: 1300px) {
         width: 60%;
@@ -179,6 +177,7 @@ const Text = styled(motion.p)`
 
     @media (max-width: 900px) {
         width: 70%;
+        padding: 1.5rem;
     }
 
     @media (max-width: 500px) {
