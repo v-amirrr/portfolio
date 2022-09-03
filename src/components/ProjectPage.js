@@ -80,7 +80,7 @@ const ProjectPage = () => {
                 <Page initial='hidden' animate='visible' exit='exit' variants={pageVariants}>
                     <Content img={data.image}>
                         
-                        <img className='background' src={data.image} alt="background" />
+                        <img className='background' src={data.image} alt={data.title} />
 
                         <Title>
                             <h1>{data.title}</h1>

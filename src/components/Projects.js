@@ -28,7 +28,7 @@ const Projects = () => {
                         projects.map(item => (
                             <Link to={"/projects/" + item.url} key={item.url}>
                                 <Project whileTap={{ scale: 0.8 }} variants={projectVariants}>
-                                    <img src={item.image} alt="project-image" />
+                                    <img src={item.image} alt={item.title} />
                                     <div>
                                         <h4>{item.title}</h4>
                                         <p>{item.what}</p>
