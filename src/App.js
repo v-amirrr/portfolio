@@ -45,7 +45,7 @@ const App = () => {
                     :
                         <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-desktop.webp' alt="background" /></Background>
                 :
-                    location.pathname == "/" || location.pathname == "/about-me"
+                    location.pathname == "/"
                     ?
                         <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="light"><img src='/images/bg-light-mobile.webp' alt="background" /></Background>
                     :

@@ -24,7 +24,7 @@ const AboutMe = () => {
                 <Content>
                     <Title variants={titleVariants}>who am i?</Title>
                     <Text variants={textVariants}>
-                        I'm a junior Front-End Developer. I borned and raised in Mashhad which is a !beautiful city in Iran.
+                        I'm a junior Front-End Developer. I was borned and raised in Mashhad which is a !beautiful city in Iran.
                         <br />
                         <br />
                         I started learning web development in 2020, and it was one of my best decisions throughout life.
