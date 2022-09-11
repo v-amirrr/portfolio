@@ -153,7 +153,7 @@ const Title = styled(motion.h1)`
 
 const Text = styled(motion.p)`
     font-family: 'Outfit', sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1rem;
     word-spacing: 1px;
     letter-spacing: -.5px;
@@ -166,7 +166,7 @@ const Text = styled(motion.p)`
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 2rem;
-    color: #bbb;
+    color: #aaa;
     user-select: text;
     box-shadow: #00000033 0px 5px 10px;
 
@@ -174,10 +174,12 @@ const Text = styled(motion.p)`
         width: 60%;
         height: 50%;
     }
-
+    
     @media (max-width: 900px) {
         width: 70%;
         padding: 1.5rem;
+        font-weight: 200;
+        color: #bbb;
     }
 
     @media (max-width: 500px) {
