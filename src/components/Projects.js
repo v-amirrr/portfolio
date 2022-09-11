@@ -9,17 +9,23 @@ import { motion } from 'framer-motion';
 
 const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.04, when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.02, when: "afterChidren" } }
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.03, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.03, when: "afterChidren" } }
 };
 
-const projectVariants = {
-    hidden: { opacity: 0, y: -50},
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'tween' } },
+const projectDesktopVariants = {
+    hidden: { opacity: 0, y: -50, x: -20 },
+    visible: { opacity: 1, y: 0, x: 0, transition: { duration: 0.3, type: 'tween' } },
+    exit: { opacity: 0, y: 50, x: 20, transition: { duration: 0.25, type: 'tween' } }
+};
+
+const projectMobileVariants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.25, type: 'tween' } },
     exit: { opacity: 0, y: 50, transition: { duration: 0.2, type: 'tween' } }
 };
 
-const Projects = () => {
+const Projects = ({ widthSize }) => {
     return (
         <>
             <ProjectsPage initial='hidden' animate='visible' exit='exit'>
@@ -27,7 +33,7 @@ const Projects = () => {
                     {
                         projects.map(item => (
                             <Link to={"/projects/" + item.url} key={item.url}>
-                                <Project whileTap={{ scale: 0.8 }} variants={projectVariants}>
+                                <Project whileTap={{ scale: 0.8 }} variants={widthSize >= 900 ? projectDesktopVariants : projectMobileVariants}>
                                     <img src={item.image} alt={item.title} />
                                     <div>
                                         <h4>{item.title}</h4>

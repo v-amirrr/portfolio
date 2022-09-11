@@ -37,8 +37,8 @@ const Contact = () => {
 
     return (
         <>
-            <ContactPage initial='hidden' animate='visible' exit='exit'>
-                <Content variants={contentVariants}>
+            <ContactPage>
+                <Content variants={contentVariants} initial='hidden' animate='visible' exit='exit'>
                     {
                         contact.map(item => (
                             <motion.div variants={itemVariants}>

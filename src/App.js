@@ -15,8 +15,8 @@ import Contact from './components/Contact';
 
 const bgVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.3, type: 'tween' } },
-    exit: { opacity: 0, transition: { duration: 0.3, type: 'tween' } }
+    visible: { opacity: 1, transition: { duration: 1, type: 'tween' } },
+    exit: { opacity: 0, transition: { duration: 1, type: 'tween' } }
 };
 
 const App = () => {
@@ -45,19 +45,15 @@ const App = () => {
                     :
                         <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-desktop.webp' alt="background" /></Background>
                 :
-                    location.pathname == "/"
-                    ?
-                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="light"><img src='/images/bg-light-mobile.webp' alt="background" /></Background>
-                    :
-                        <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-mobile.webp' alt="background" /></Background>
+                    <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-mobile.webp' alt="background" /></Background>
             }
             </AnimatePresence>
             
             <AnimatePresence exitBeforeEnter>
                 <Routes location={location} key={location.key}>
                     <Route path="/" element={<Home />} />
-                    <Route path='/projects' element={<Projects />} />
-                    <Route path='/projects/:id' element={<ProjectPage />} />
+                    <Route path='/projects' element={<Projects widthSize={widthSize} />} />
+                    <Route path='/projects/:id' element={<ProjectPage widthSize={widthSize} />} />
                     <Route path='/about-me' element={<AboutMe />} />
                     <Route path='/contact' element={<Contact />} />
                 </Routes>

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const contentVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } }
+    exit: { opacity: 0, transition: { duration: 0.2, when: "afterChildren" } }
 };
 
 const itemVariants = {
@@ -182,6 +182,8 @@ const Title = styled(motion.div)`
     }
 
     @media (max-width: 600px) {
+        margin-top: -3.5rem;
+        
         .title-text {
             font-size: .8rem;
             word-spacing: 1px;
@@ -241,8 +243,10 @@ const Buttons = styled(motion.div)`
         }
 
         @media (max-width: 900px) {
-            padding: .7rem 5rem;
+            padding: .7rem 4rem;
             font-size: 1rem;
+            border: solid 1px #ffffff10;
+            background-color: #ffffff02;
         }
     }
 `;

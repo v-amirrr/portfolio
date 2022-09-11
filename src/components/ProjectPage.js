@@ -12,10 +12,16 @@ import { AiFillCaretRight } from 'react-icons/ai';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const pageVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.2, type: 'tween' } },
-    exit: { opacity: 0, x: -20, transition: { duration: 0.2, type: 'tween' } }
+const pageDesktopVariants = {
+    hidden: { opacity: 0, x: -200, scaleX: 0.8 },
+    visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, x: -200, scaleX: 0.8, transition: { duration: 0.4, type: 'tween' } }
+};
+
+const pageMobileVariants = {
+    hidden: { opacity: 0, x: -10 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.15, type: 'tween' } },
+    exit: { opacity: 0, x: -20, transition: { duration: 0.15, type: 'tween' } }
 };
 
 const toggleSectionVariants = {
@@ -24,7 +30,7 @@ const toggleSectionVariants = {
     exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
 };
 
-const ProjectPage = () => {
+const ProjectPage = ({ widthSize }) => {
 
     const { id } = useParams();
     const navigate = useNavigate();
@@ -77,7 +83,7 @@ const ProjectPage = () => {
             {
                 data
                 &&
-                <Page initial='hidden' animate='visible' exit='exit' variants={pageVariants}>
+                <Page initial='hidden' animate='visible' exit='exit' variants={widthSize >= 900 ? pageDesktopVariants : pageMobileVariants}>
                     <Content img={data.image}>
                         
                         <img className='background' src={data.image} alt={data.title} />
@@ -243,7 +249,7 @@ const Title = styled.div`
         white-space: nowrap;
         font-size: 2rem;
         font-weight: 900;
-        color: #eee;
+        color: #999;
         text-shadow: #00000055 0px 4px 12px;
 
         @media (max-width: 745px) {
@@ -317,7 +323,7 @@ const ToggleSection = styled.div`
     flex-direction: column;
     margin: 1rem;
     position: relative;
-    transition: height .3s;
+    transition: height .25s;
 
     .title {
         text-transform: uppercase;
@@ -354,7 +360,7 @@ const ToggleSection = styled.div`
         word-spacing: 5px;
         width: 60%;
         text-align: center;
-        color: #999;
+        color: #888;
     }
 
     .images {
