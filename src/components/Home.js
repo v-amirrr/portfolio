@@ -212,8 +212,8 @@ const Buttons = styled(motion.div)`
         text-transform: uppercase;
         font-size: 1.2rem;
         font-weight: 500;
-        border: solid 2px #ffffff10;
-        border-radius: 15px;
+        border: solid 1.5px #ffffff10;
+        border-radius: 10px;
         word-spacing: 2px;
         letter-spacing: -1px;
         white-space: nowrap;
@@ -236,7 +236,7 @@ const Buttons = styled(motion.div)`
             &:hover {
                 color: #ccc;
                 background-color: #ffffff02;
-                border: solid 2px #ffffff15;
+                border: solid 1.5px #ffffff15;
                 padding: .7rem 7rem;
                 letter-spacing: 1px;
             }

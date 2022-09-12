@@ -145,13 +145,14 @@ const Content = styled(motion.div)`
         span {
             margin: 0 .5rem;
             font-family: 'Outfit', sans-serif;
-            font-weight: 200;
+            font-weight: 400;
+            letter-spacing: -.5px;
             text-transform: uppercase;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: row;
-            color: #aaa;
+            color: #666;
             transition: color .4s;
             cursor: pointer;
             white-space: nowrap;
@@ -160,19 +161,24 @@ const Content = styled(motion.div)`
                 font-size: .8rem;
             }
 
-            &:hover {
-                color: #fff;
-            }
-
             i {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: row;
-                font-size: 1.1rem;
+                color: #888;
+                transition: color .4s;
 
                 @media (max-width: 700px) {
                     font-size: 1rem;
+                }
+            }
+
+            &:hover {
+                color: #fff;
+
+                i {
+                    color: #fff;
                 }
             }
         }
