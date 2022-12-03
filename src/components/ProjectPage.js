@@ -15,7 +15,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 const pageDesktopVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -100, scaleX: 0.9, transition: { duration: 0.4, type: 'tween' } }
+    exit: { opacity: 0, x: -100, scaleX: 0.9, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const pageMobileVariants = {

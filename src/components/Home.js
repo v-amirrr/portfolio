@@ -224,14 +224,15 @@ const Buttons = styled(motion.div)`
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: background .4s, letter-spacing .4s;
+        transition: color .4s, letter-spacing .4s;
         box-shadow: #00000055 0px 5px 10px;
         color: #888888cc;
+        background-color: #ffffff02;
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
             &:hover {
-                background-color: #ffffff02;
                 letter-spacing: 1px;
+                color: #aaa;
             }
         }
 
