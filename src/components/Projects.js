@@ -209,7 +209,6 @@ const Project = styled(motion.div)`
             }
         }
     }
-    
 `;
 
 export default Projects;

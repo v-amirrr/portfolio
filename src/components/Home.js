@@ -80,7 +80,7 @@ const Home = () => {
                 <Buttons variants={itemVariants}>
                     <a href='https://drive.google.com/file/d/1wZJ0K-Fez_pX9yQO2U_INKqFZbfSclMm/view?usp=sharing' target="_blank">
                         <motion.div whileTap={{ scale: 0.8 }}>
-                            <p>see my resume</p>
+                            <p>check out my resume</p>
                         </motion.div>
                     </a>
                 </Buttons>
@@ -210,43 +210,33 @@ const Buttons = styled(motion.div)`
 
     div {
         text-transform: uppercase;
-        font-size: 1.2rem;
-        font-weight: 500;
-        border: solid 1.5px #ffffff10;
+        font-size: .8rem;
+        font-weight: 200;
+        border: solid 1px #ffffff08;
         border-radius: 10px;
         word-spacing: 2px;
-        letter-spacing: -1px;
+        padding: .7rem 1rem;
         white-space: nowrap;
         cursor: pointer;
         text-align: center;
-        padding: .7rem 6rem;
         background-color: #00000022;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: background .4s, border .4s, color .4s, padding .4s, letter-spacing .4s;
+        transition: background .4s, letter-spacing .4s;
         box-shadow: #00000055 0px 5px 10px;
-        color: #aaa;
-        
-        p {
-            text-shadow: #000 0px 12px 12px;
-        }
+        color: #888888cc;
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
             &:hover {
-                color: #ccc;
                 background-color: #ffffff02;
-                border: solid 1.5px #ffffff15;
-                padding: .7rem 7rem;
                 letter-spacing: 1px;
             }
         }
 
-        @media (max-width: 900px) {
-            padding: .7rem 4rem;
-            font-size: 1rem;
-            border: solid 1px #ffffff10;
+        @media (max-width: 500px) {
             background-color: #ffffff02;
+            padding: .7rem .8rem;
         }
     }
 `;
