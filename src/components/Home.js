@@ -85,7 +85,7 @@ const Home = () => {
                     </a>
                 </Buttons>
 
-                <SocialMedia variants={socialMediaVariants}>
+                {/* <SocialMedia variants={socialMediaVariants}>
                     <hr />
                     <a href='https://github.com/v-amirrr' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
@@ -105,7 +105,7 @@ const Home = () => {
                         </motion.div>
                     </a>
                     <hr />
-                </SocialMedia>
+                </SocialMedia> */}
             </HomePage>
         </>
     );
@@ -125,10 +125,10 @@ const Title = styled(motion.div)`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 1.2rem;
     font-family: 'Outfit', sans-serif;
     line-height: .9;
     white-space: nowrap;
+    margin-top: 2rem;
 
     span {
         transition: color .2s;
@@ -182,7 +182,7 @@ const Title = styled(motion.div)`
     }
 
     @media (max-width: 600px) {
-        margin-top: -3.5rem;
+        /* margin-top: -3.5rem; */
         
         .title-text {
             font-size: .8rem;
@@ -207,6 +207,7 @@ const Buttons = styled(motion.div)`
     justify-content: center;
     align-items: center;
     font-family: 'Outfit', sans-serif;
+    padding: 1rem;
 
     div {
         text-transform: uppercase;
@@ -234,7 +235,7 @@ const Buttons = styled(motion.div)`
             }
         }
 
-        @media (max-width: 500px) {
+        @media (max-width: 800px) {
             background-color: #ffffff02;
             padding: .7rem .8rem;
         }
