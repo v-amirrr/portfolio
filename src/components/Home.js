@@ -11,8 +11,8 @@ const contentVariants = {
 
 const itemVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'tween' } },
-    exit: { opacity: 0, y: 20, transition: { duration: 0.2, type: 'tween' } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: 20, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const socialMediaVariants = {
