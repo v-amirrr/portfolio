@@ -8,13 +8,13 @@ import { motion } from 'framer-motion';
 
 const contact = [
     { name: "email", link: "mailto:amirrr.valizadeh@gmail.com", username: "amirrr.valizadeh@gmail.com", img: "/images/gmail.svg" },
-    { name: "linkedin", link: "https://linkedin.com/in/amirvalizadeh", username: "Amir Valizadeh", img: "/images/linkedin.svg" },
     { name: "github", link: "https://github.com/v-amirrr", username: "v_amirrr", img: "/images/github.svg" },
     { name: "telegram", link: "https://t.me/v_amirrr", username: "v_amirrr", img: "/images/telegram.svg" },
-    { name: "instagram", link: "https://www.instagram.com/v_amirrr", username: "v_amirrr", img: "/images/instagram.svg" },
+    { name: "linkedin", link: "https://linkedin.com/in/amirvalizadeh", username: "Amir Valizadeh", img: "/images/linkedin.svg" },
+    // { name: "instagram", link: "https://www.instagram.com/v_amirrr", username: "v_amirrr", img: "/images/instagram.svg" },
     { name: "skype", link: "https://join.skype.com/invite/MNV0cL3D8Jwf", username: "live:.cid.98798c4805efe65a", img: "/images/skype.svg" },
-    { name: "twitter", link: "https://twitter.com/v_amirrr", username: "v_amirrr", img: "/images/twitter.svg" },
-    { name: "whatsapp", link: "https://wa.me/9330938960", username: "amir", img: "/images/whatsapp.svg" },
+    // { name: "twitter", link: "https://twitter.com/v_amirrr", username: "v_amirrr", img: "/images/twitter.svg" },
+    // { name: "whatsapp", link: "https://wa.me/9330938960", username: "amir", img: "/images/whatsapp.svg" },
 ];
 
 const contentVariants = {
@@ -83,31 +83,10 @@ const Content = styled(motion.div)`
     padding: 0 2rem;
     height: 70%;
     margin-top: 3rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
 
     @media (max-width: 600px) {
         padding: 0 1rem;
-        overflow: hidden;
         height: auto;
-    }
-
-    /* width */
-    ::-webkit-scrollbar {
-        width: .2rem;
-        position: absolute;
-    }
-    
-    /* Track */
-    ::-webkit-scrollbar-track {
-        border-radius: 50px;
-        background: #ffffff08;
-    }
-    
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-        background: #ffffff33;
-        border-radius: 50px;
     }
 
     div {
@@ -145,9 +124,9 @@ const Content = styled(motion.div)`
         span {
             margin: 0 .5rem;
             font-family: 'Outfit', sans-serif;
-            font-weight: 400;
-            letter-spacing: -.5px;
-            text-transform: uppercase;
+            font-weight: 200;
+            font-size: 1.1rem;
+            text-transform: capitalize;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -166,11 +145,12 @@ const Content = styled(motion.div)`
                 justify-content: center;
                 align-items: center;
                 flex-direction: row;
-                color: #888;
+                color: #88888888;
+                font-size: 1rem;
                 transition: color .4s;
 
                 @media (max-width: 700px) {
-                    font-size: 1rem;
+                    font-size: .8rem;
                 }
             }
 
