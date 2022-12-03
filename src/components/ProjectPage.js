@@ -13,15 +13,15 @@ import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const pageDesktopVariants = {
-    hidden: { opacity: 0, x: -200, scaleX: 0.8 },
+    hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -200, scaleX: 0.8, transition: { duration: 0.4, type: 'tween' } }
+    exit: { opacity: 0, x: -100, scaleX: 0.9, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const pageMobileVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.15, type: 'tween' } },
-    exit: { opacity: 0, x: -20, transition: { duration: 0.15, type: 'tween' } }
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.2, type: 'tween' } },
+    exit: { opacity: 0, x: -50, transition: { duration: 0.2, type: 'tween' } }
 };
 
 const toggleSectionVariants = {

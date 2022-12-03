@@ -21,8 +21,8 @@ const projectDesktopVariants = {
 
 const projectMobileVariants = {
     hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.25, type: 'tween' } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.2, type: 'tween' } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.3, type: 'tween' } },
+    exit: { opacity: 0, y: 50, transition: { duration: 0.3, type: 'tween' } }
 };
 
 const Projects = ({ widthSize }) => {
