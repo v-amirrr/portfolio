@@ -14,20 +14,20 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const pageDesktopVariants = {
     hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -100, scaleX: 0.9, transition: { duration: 0.2, type: 'tween' } }
+    visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, x: -50, scale: [1, 0.9], transition: { duration: 0.4, type: 'tween' } }
 };
 
 const pageMobileVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.2, type: 'tween' } },
-    exit: { opacity: 0, x: -50, transition: { duration: 0.2, type: 'tween' } }
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, x: -50, scale: [1, 0.9], transition: { duration: 0.4, type: 'tween' } }
 };
 
 const toggleSectionVariants = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 5, transition: { duration: 0.2 } },
-    exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
+    hidden: { opacity: 0, y: 20, scaleX: 0.8 },
+    visible: { opacity: 1, y: 5, scaleX: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, y: -20, scaleX: 0.8, scaleY: 0, transition: { duration: 0.3 } }
 };
 
 const ProjectPage = ({ widthSize }) => {
@@ -213,6 +213,7 @@ const Content = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
+    user-select: text;
     
     .background {
         position: absolute;
@@ -272,6 +273,7 @@ const Title = styled.div`
         cursor: pointer;
         border-radius: 40px;
         transition: padding .3s;
+        user-select: none;
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
             &:hover {
