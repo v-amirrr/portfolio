@@ -173,7 +173,7 @@ const Title = styled(motion.div)`
     }
 
     @media (max-width: 600px) {
-        /* margin-top: -3.5rem; */
+        margin-top: -1.5rem;
         
         .title-text {
             font-size: .8rem;
