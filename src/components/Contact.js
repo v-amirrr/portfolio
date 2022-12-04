@@ -8,11 +8,11 @@ import { motion } from 'framer-motion';
 
 const contact = [
     { name: "email", link: "mailto:amirrr.valizadeh@gmail.com", username: "amirrr.valizadeh@gmail.com", img: "/images/gmail.svg" },
-    { name: "github", link: "https://github.com/v-amirrr", username: "v_amirrr", img: "/images/github.svg" },
     { name: "telegram", link: "https://t.me/v_amirrr", username: "v_amirrr", img: "/images/telegram.svg" },
-    { name: "linkedin", link: "https://linkedin.com/in/amirvalizadeh", username: "Amir Valizadeh", img: "/images/linkedin.svg" },
-    // { name: "instagram", link: "https://www.instagram.com/v_amirrr", username: "v_amirrr", img: "/images/instagram.svg" },
     { name: "skype", link: "https://join.skype.com/invite/MNV0cL3D8Jwf", username: "live:.cid.98798c4805efe65a", img: "/images/skype.svg" },
+    { name: "linkedin", link: "https://linkedin.com/in/amirvalizadeh", username: "Amir Valizadeh", img: "/images/linkedin.svg" },
+    { name: "github", link: "https://github.com/v-amirrr", username: "v_amirrr", img: "/images/github.svg" },
+    // { name: "instagram", link: "https://www.instagram.com/v_amirrr", username: "v_amirrr", img: "/images/instagram.svg" },
     // { name: "twitter", link: "https://twitter.com/v_amirrr", username: "v_amirrr", img: "/images/twitter.svg" },
     // { name: "whatsapp", link: "https://wa.me/9330938960", username: "amir", img: "/images/whatsapp.svg" },
 ];
@@ -24,9 +24,9 @@ const contentVariants = {
 };
 
 const itemVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.2, type: 'tween' } },
-    exit: { opacity: 0, y: 20, transition: { duration: 0.2, type: 'tween' } }
+    hidden: { opacity: 0, y: -20, scale: 0.5 },
+    visible: { opacity: 1, y: [-20, 50, 0], scale: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: [0, 50, 20], scale: 0.5, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const Contact = () => {
@@ -80,45 +80,20 @@ const ContactPage = styled(motion.section)`
 `;
 
 const Content = styled(motion.div)`
-    padding: 0 2rem;
-    height: 70%;
     margin-top: 3rem;
-
-    @media (max-width: 600px) {
-        padding: 0 1rem;
-        height: auto;
-    }
 
     div {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
         background-color: #00000033;
         border-radius: 10px;
         width: 23rem;
         height: 4rem;
         margin: 1rem 0;
-        border: solid 1px #ffffff11;
-        transition: background .4s;
-
-        @media (max-width: 700px) {
-            width: 18rem;
-            height: 3.5rem;
-        }
-
-        @media (hover: hover) and (pointer: fine) {
-            &:hover {
-                background-color: #ffffff05;
-            }
-        }
 
         img {
             width: 4rem;
-
-            @media (max-width: 700px) {
-                width: 3rem;
-            }
         }
 
         span {
@@ -130,28 +105,18 @@ const Content = styled(motion.div)`
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: row;
             color: #666;
             transition: color .4s;
             cursor: pointer;
             white-space: nowrap;
 
-            @media (max-width: 700px) {
-                font-size: .8rem;
-            }
-
             i {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                flex-direction: row;
                 color: #88888888;
                 font-size: 1rem;
                 transition: color .4s;
-
-                @media (max-width: 700px) {
-                    font-size: .8rem;
-                }
             }
 
             &:hover {
@@ -160,6 +125,21 @@ const Content = styled(motion.div)`
                 i {
                     color: #fff;
                 }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        div {
+            width: 20rem;
+            height: 4rem;
+
+            img {
+                width: 3.5rem;
+            }
+
+            span {
+                font-size: 1rem;
             }
         }
     }
