@@ -50,7 +50,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path='/projects' element={<Projects widthSize={widthSize} />} />
                     <Route path='/projects/:id' element={<ProjectPage widthSize={widthSize} />} />
-                    <Route path='/about-me' element={<AboutMe />} />
+                    <Route path='/about-me' element={<AboutMe widthSize={widthSize} />} />
                     <Route path='/contact' element={<Contact />} />
                 </Routes>
             </AnimatePresence>
