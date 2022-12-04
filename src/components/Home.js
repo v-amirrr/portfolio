@@ -17,8 +17,8 @@ const itemVariants = {
 
 const socialMediaVariants = {
     hidden: { opacity: 0, scaleY: 0 },
-    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.2 } },
-    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.2 } }
+    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.4 } },
+    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.4 } }
 };
 
 const Home = () => {
@@ -85,27 +85,18 @@ const Home = () => {
                     </a>
                 </Buttons>
 
-                {/* <SocialMedia variants={socialMediaVariants}>
-                    <hr />
+                <SocialMedia variants={socialMediaVariants}>
                     <a href='https://github.com/v-amirrr' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src="/images/github.svg" />
                         </motion.div>
                     </a>
-                    <hr />
                     <a href='https://linkedin.com/in/amirvalizadeh' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src="/images/linkedin.svg" />
                         </motion.div>
                     </a>
-                    <hr />
-                    <a href='https://t.me/v_amirrr' target="_blank" >
-                        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-                            <img src="/images/telegram.svg" />
-                        </motion.div>
-                    </a>
-                    <hr />
-                </SocialMedia> */}
+                </SocialMedia>
             </HomePage>
         </>
     );
@@ -246,85 +237,35 @@ const Buttons = styled(motion.div)`
 const SocialMedia = styled(motion.div)`
     position: absolute;
     left: 0;
-    margin: 1rem;
-    width: 2rem;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    @media (max-width: 768px) {
-        bottom: 0;
-        flex-direction: row;
-        margin: 1rem 0;
-        width: 100%;
-        height: 2rem;
-    }
-
-    hr {
-        transform: rotate(90deg);
-        width: 1rem;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.20));
-        border: none;
-
-        @media (max-width: 768px) {
-            transform: rotate(0deg);
-            width: 5%;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10));
-        }
-
-        &:first-child {
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.30));
-            width: 3rem;
-            margin-bottom: 1rem;
-
-            @media (max-width: 768px) {
-                margin: 0;
-                width: 15%;
-                background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.20));
-            }
-        }
-
-        &:last-child {
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0));
-            width: 3rem;
-            margin-top: 1rem;
-
-            @media (max-width: 768px) {
-                margin: 0;
-                width: 15%;
-                background-image: linear-gradient(to right, rgba(255, 255, 255, 0.20), rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0));
-            }
-        }
-    }
-
     div {
-        border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row;
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
         margin: .5rem 0;
         cursor: pointer;
-        backdrop-filter: blur(20px) saturate(165%);
-        -webkit-backdrop-filter: blur(20px) saturate(165%);
-        background-color: #00000055;
-        border: solid 1px #ffffff22;
-        transition: background-color .4s, border .4s;
         overflow: hidden;
 
         img {
-            width: 3rem;
+            width: 100%;
         }
+    }
+    
+    @media (max-width: 900px) {
+        bottom: 0;
+        flex-direction: row;
+        margin: 1rem 0;
+        height: 2rem;
+        width: 100%;
 
-        @media (max-width: 768px) {
+        div {
+            width: 2.5rem;
             margin: 0;
-            width: 1.8rem;
-            height: 1.8rem;
         }
     }
 `;
