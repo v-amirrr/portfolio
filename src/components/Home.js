@@ -1,5 +1,8 @@
 import React from 'react';
 
+import LinkdInIcon from "../assets/images/linkedin.svg";
+import GitHubIcon from "../assets/images/github.svg";
+
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -88,12 +91,13 @@ const Home = () => {
                 <SocialMedia variants={socialMediaVariants}>
                     <a href='https://github.com/v-amirrr' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-                            <img src="/images/github.svg" />
+                            <img src={GitHubIcon} />
                         </motion.div>
                     </a>
+
                     <a href='https://linkedin.com/in/amirvalizadeh' target="_blank" >
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
-                            <img src="/images/linkedin.svg" />
+                            <img src={LinkdInIcon} />
                         </motion.div>
                     </a>
                 </SocialMedia>

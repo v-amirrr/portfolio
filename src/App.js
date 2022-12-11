@@ -39,9 +39,13 @@ const App = () => {
             {
                 widthSize >= 900
                 ?
-                    <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-desktop.webp' alt="background" /></Background>
+                    <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark">
+                        <img src={require('./assets/images/bg-dark-desktop.webp')} alt="background" />
+                    </Background>
                 :
-                    <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark"><img src='/images/bg-dark-mobile.webp' alt="background" /></Background>
+                    <Background initial='hidden' animate='visible' exit='exit' variants={bgVariants} key="dark">
+                        <img src={require('./assets/images/bg-dark-mobile.webp')} alt="background" />
+                    </Background>
             }
             </AnimatePresence>
             
