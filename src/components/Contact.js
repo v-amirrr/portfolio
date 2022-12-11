@@ -25,14 +25,14 @@ const contact = [
 
 const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.05, when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.05, when: "afterChidren" } }
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.1, when: "afterChidren" } }
 };
 
 const itemVariants = {
     hidden: { opacity: 0, y: -20, scale: 0.5 },
-    visible: { opacity: 1, y: [-20, 50, 0], scale: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: [0, 50, 20], scale: 0.5, transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, y: [-20, 20, 0], scale: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: [0, -20, 20], scale: 0.5, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const Contact = () => {
