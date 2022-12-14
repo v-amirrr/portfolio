@@ -9,20 +9,20 @@ import { motion } from 'framer-motion';
 
 const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.03, when: "beforeChildren" } },
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.05, when: "beforeChildren" } },
     exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.03, when: "afterChidren" } }
 };
 
 const projectDesktopVariants = {
-    hidden: { opacity: 0, y: -50, x: -20 },
-    visible: { opacity: 1, y: 0, x: 0, transition: { duration: 0.3, type: 'tween' } },
-    exit: { opacity: 0, y: 50, x: 20, transition: { duration: 0.25, type: 'tween' } }
+    hidden: { opacity: 0, y: -30, x: -30, scale: 0.8 },
+    visible: { opacity: 1, y: 0, x: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: 30, x: 30, scale: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const projectMobileVariants = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.3, type: 'tween' } },
-    exit: { opacity: 0, y: 50, transition: { duration: 0.3, type: 'tween' } }
+    hidden: { opacity: 0, y: -50, scale: 0.8 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: 50, scale: 0.9, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const Projects = ({ widthSize }) => {
@@ -33,7 +33,7 @@ const Projects = ({ widthSize }) => {
                     {
                         projects.map(item => (
                             <Link to={"/projects/" + item.url} key={item.url}>
-                                <Project whileTap={{ scale: 0.8 }} variants={widthSize >= 900 ? projectDesktopVariants : projectMobileVariants}>
+                                <Project variants={widthSize >= 900 ? projectDesktopVariants : projectMobileVariants}>
                                     <img src={item.image} alt={item.title} />
                                     <div>
                                         <h4>{item.title}</h4>
@@ -142,7 +142,7 @@ const Project = styled(motion.div)`
         }
 
         p {
-            font-size: .6rem;
+            font-size: .4rem;
             white-space: nowrap;
             overflow: hidden;
             width: 50%;
