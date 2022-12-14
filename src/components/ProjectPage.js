@@ -15,13 +15,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 const pageDesktopVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -50, scale: [1, 0.9], transition: { duration: 0.4, type: 'tween' } }
+    exit: { opacity: 0, x: [0, 10, -100], scale: [1, 1.2], transition: { duration: 0.4, type: 'tween' } }
 };
 
 const pageMobileVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: -50, scale: [1, 0.9], transition: { duration: 0.4, type: 'tween' } }
+    visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.3, type: 'tween' } },
+    exit: { opacity: 0, x: [0, 10, -100], scale: [1, 1.2], transition: { duration: 0.3, type: 'tween' } }
 };
 
 const toggleSectionVariants = {
@@ -272,13 +272,13 @@ const Title = styled.div`
         background-color: #ffffff15;
         cursor: pointer;
         border-radius: 40px;
-        transition: padding .3s;
+        transition: padding .25s;
         user-select: none;
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
             &:hover {
                 padding-right: 10.5rem;
-    
+
                 p {
                     left: 130%;
                     opacity: 1;
@@ -298,7 +298,6 @@ const Title = styled.div`
                 justify-content: center;
                 align-items: center;
                 color: #fff;
-                transition: font-size .3s;
             }
         
             p {
@@ -310,7 +309,7 @@ const Title = styled.div`
                 left: 50%;
                 opacity: 0;
                 white-space: nowrap;
-                transition: opacity .2s, left .3s;
+                transition: opacity .2s, left .2s;
             }
         }
     }
