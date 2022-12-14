@@ -89,13 +89,13 @@ const Home = () => {
                 </Buttons>
 
                 <SocialMedia variants={socialMediaVariants}>
-                    <a href='https://github.com/v-amirrr' target="_blank" >
+                    <a href='https://github.com/v-amirrr' target="_blank" rel="noopener noreferror">
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src={GitHubIcon} />
                         </motion.div>
                     </a>
 
-                    <a href='https://linkedin.com/in/amirvalizadeh' target="_blank" >
+                    <a href='https://linkedin.com/in/amirvalizadeh' target="_blank" rel="noopener noreferror">
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src={LinkdInIcon} />
                         </motion.div>

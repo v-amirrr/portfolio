@@ -169,14 +169,14 @@ const ProjectPage = ({ widthSize }) => {
                         </div>
 
                         <ExternalLink>
-                            <a href={data.github} target="_blank">
+                            <a href={data.github} target="_blank" rel="noopener noreferror">
                                 <motion.div whileTap={{ scale: 0.8 }}>
                                     <i><SiGithub /></i>
                                     <p>GitHub Repository</p>
                                 </motion.div>
                             </a>
 
-                            <a href={data.demo} target="_blank">
+                            <a href={data.demo} target="_blank" rel="noopener noreferror">
                                 <motion.div whileTap={{ scale: 0.8 }}>
                                     <i><TbCornerDownRight /></i>
                                     <p>Live Demo</p>

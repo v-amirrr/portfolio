@@ -50,7 +50,7 @@ const Contact = () => {
                             <motion.div variants={itemVariants}>
                                 <img src={item.img} alt="contact-icon" />
 
-                                <a href={item.link} target="_blank">
+                                <a href={item.link} target="_blank" rel="noopener noreferror">
                                     <motion.span whileTap={{ scale: 0.8 }}>
                                         <i><TbCornerDownRight /></i>
                                         <p>open</p>
