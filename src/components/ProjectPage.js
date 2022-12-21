@@ -20,8 +20,8 @@ const pageDesktopVariants = {
 
 const pageMobileVariants = {
     hidden: { opacity: 0, x: -20 },
-    visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.3, type: 'tween' } },
-    exit: { opacity: 0, x: [0, 10, -100], scale: [1, 1.2], transition: { duration: 0.3, type: 'tween' } }
+    visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, x: [0, 10, -100], scale: [1, 1.2], transition: { duration: 0.4, type: 'tween' } }
 };
 
 const toggleSectionVariants = {

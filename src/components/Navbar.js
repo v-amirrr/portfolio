@@ -45,14 +45,14 @@ const Nav = styled(motion.nav)`
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    padding: 1rem;
+    padding: 1rem .8rem;
     border-radius: 0 0 10px 10px;
     background-color: #e6e6e602;
     box-shadow: #00000011 0px 4px 12px;
     border: solid 1px #ffffff10;
     
     div {
-        padding: 0 .8rem;
+        padding: 0 .6rem;
         cursor: pointer;        
         color: #aaa;
         transition: color .4s, padding .4s, letter-spacing .4s;
@@ -60,7 +60,7 @@ const Nav = styled(motion.nav)`
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
             &:hover {
-                padding: 0 1rem;
+                padding: 0 .8rem;
                 letter-spacing: 2px;
             }
         }
