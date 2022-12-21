@@ -6,26 +6,26 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 const titleDesktopVariants = {
-    hidden: { opacity: 0, x: -100, scale: 0.5 },
-    visible: { opacity: 1, x: 0, scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    hidden: { opacity: 0, x: -100, scale: 0.8 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
     exit: { opacity: 0, x: -50, scale: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const textDesktopVariants = {
-    hidden: { opacity: 0, x: 100, scale: 0.5 },
-    visible: { opacity: 1, x: 0, scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    hidden: { opacity: 0, x: 100, scale: 0.8 },
+    visible: { opacity: 1, x: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
     exit: { opacity: 0, x: 50, scale: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const titleMobileVariants = {
-    hidden: { opacity: 0, y: -50, scale: 0.5 },
-    visible: { opacity: 1, y: 0, scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    hidden: { opacity: 0, y: -50, scale: 0.8 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
     exit: { opacity: 0, y: 50, scale: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const textMobileVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.5 },
-    visible: { opacity: 1, y: 0, scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
     exit: { opacity: 0, y: -50, scale: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
