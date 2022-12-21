@@ -32,7 +32,7 @@ const contentVariants = {
 const itemVariants = {
     hidden: { opacity: 0, y: -20, scale: 0.5 },
     visible: { opacity: 1, y: [-20, 20, 0], scale: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: [0, -20, 20], scale: 0.5, transition: { duration: 0.4, type: 'tween' } }
+    exit: { opacity: 0, y: [0, 20, -20], scale: 0.5, transition: { duration: 0.4, type: 'tween' } }
 };
 
 const Contact = () => {
