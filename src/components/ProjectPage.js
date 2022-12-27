@@ -102,7 +102,7 @@ const ProjectPage = ({ widthSize }) => {
                             <ToggleSection show={techShow}>
                                 <div className='title' onClick={setTechShowTrue}>
                                     <i><AiFillCaretRight /></i>
-                                    <h4>technologies</h4>
+                                    <h4>Technologies</h4>
                                 </div>
                                 <AnimatePresence>
                                     {
@@ -122,7 +122,7 @@ const ProjectPage = ({ widthSize }) => {
                             <ToggleSection show={whatShow}>
                                 <div className='title' onClick={setWhatShowTrue}>
                                     <i><AiFillCaretRight /></i>
-                                    <h4>what is this project?</h4>
+                                    <h4>What is this project?</h4>
                                 </div>
                                 <AnimatePresence>
                                     {
@@ -138,7 +138,7 @@ const ProjectPage = ({ widthSize }) => {
                             <ToggleSection show={howShow}>
                                 <div className='title' onClick={setHowShowTrue}>
                                     <i><AiFillCaretRight /></i>
-                                    <h4>how can you use this project?</h4>
+                                    <h4>How can you use this project?</h4>
                                 </div>
                                 <AnimatePresence>
                                     {
@@ -154,7 +154,7 @@ const ProjectPage = ({ widthSize }) => {
                             <ToggleSection show={whyShow}>
                                 <div className='title' onClick={setWhyShowTrue}>
                                     <i><AiFillCaretRight /></i>
-                                    <h4>why did I build this project?</h4>
+                                    <h4>Why did I build this project?</h4>
                                 </div>
                                 <AnimatePresence>
                                     {
@@ -205,7 +205,7 @@ const Page = styled(motion.section)`
 `;
 
 const Content = styled.div`
-    background-color: #000000aa;
+    background-color: #000000cc;
     position: relative;
     display: flex;
     justify-content: center;
@@ -272,7 +272,7 @@ const Title = styled.div`
         background-color: #ffffff15;
         cursor: pointer;
         border-radius: 40px;
-        transition: padding .25s;
+        transition: padding .3s;
         user-select: none;
 
         @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
@@ -297,7 +297,6 @@ const Title = styled.div`
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                color: #fff;
             }
         
             p {
@@ -306,10 +305,10 @@ const Title = styled.div`
                 letter-spacing: -1px;
                 font-weight: 600;
                 position: absolute;
-                left: 50%;
+                left: 0;
                 opacity: 0;
                 white-space: nowrap;
-                transition: opacity .2s, left .2s;
+                transition: opacity .3s, left .5s;
             }
         }
     }
@@ -327,7 +326,6 @@ const ToggleSection = styled.div`
     transition: height .25s;
 
     .title {
-        text-transform: uppercase;
         color: ${props => props.show ? "#ddd" : "#666"};
         display: flex;
         justify-content: center;
@@ -358,7 +356,7 @@ const ToggleSection = styled.div`
     .text {
         font-size: 1rem;
         font-weight: 300;
-        word-spacing: 5px;
+        word-spacing: 2px;
         width: 60%;
         text-align: center;
         color: #888;
