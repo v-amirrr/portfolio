@@ -42,11 +42,11 @@ const Nav = styled(motion.nav)`
     cursor: pointer;
     z-index: 9;
     position: absolute;
-    top: 0;
+    top: .1rem;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 1rem .8rem;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
     background-color: #e6e6e602;
     box-shadow: #00000011 0px 4px 12px;
     border: solid 1px #ffffff10;
