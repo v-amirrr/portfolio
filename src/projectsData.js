@@ -27,7 +27,7 @@ export const projects = [
         technologies: [ html, css, javascript, react, redux, sass, framermotion ],
         why: "The main reason is that I didn’t have a project with APIs so I built this. Also I wanted to work with RTK-Query. Also I wanted to have a project with SCSS so I used it. And also I used BEM for class naming.",
         github: "https://github.com/v-amirrr/lyrics-search",
-        demo: "https://song-search.netlify.app/",
+        demo: "https://songs-search.vercel.app/",
         url: 1,
     },
 
@@ -39,7 +39,7 @@ export const projects = [
         technologies: [ html, css, javascript, react, redux, firebase, framermotion, styledcomponents ],
         why: "After I built my last project (Disney+ Clone), I was looking for a simple and interesting project. Then I saw this project on the YouTube homepage and I decided to build it. And also after that I used Redux for my last project, this seemed a good opportunity to practice using Redux-Thunk in a project.",
         github: "https://github.com/v-amirrr/group-messenger",
-        demo: "https://group-messenger-reactjs.netlify.app/",
+        demo: "https://group-messenger.vercel.app/",
         url: 2,
     },
 
@@ -51,7 +51,7 @@ export const projects = [
         technologies: [ html, css, javascript, react, redux, reactrouterdom, firebase, framermotion, styledcomponents ],
         why: "After I built my last project (Finance Tracker) which was my first project that had authentication on it, I needed at least one other project with authentication to become more familiar with the whole authentication process. And also because I’d just learned Redux at that point I wanted to use it in a project and because this project gets its data from Firebase I thought it could be a good opportunity to use Redux for storing that data.",
         github: "https://github.com/v-amirrr/disney-plus-clone",
-        demo: "https://disney-react.netlify.app/",
+        demo: "https://disney-plus-clone-react.vercel.app/",
         url: 3,
     },
 
@@ -63,7 +63,7 @@ export const projects = [
         technologies: [ html, css, javascript, react, reactrouterdom, firebase, framermotion ],
         why: "After I built my last project (Recipe Directory), it was time to build a project where you can log in, create an account or log out and put something into the app.",
         github: "https://github.com/v-amirrr/finance-tracker",
-        demo: "https://finance-tracker-react.netlify.app/",
+        demo: "https://finance-tracker-reactjs.vercel.app/",
         url: 4,
     },
 
@@ -87,7 +87,7 @@ export const projects = [
         technologies: [ html, css, javascript, react, framermotion ],
         why: "This project was kind of my first project with React.js and it really booted up my React.js skills. It was in that project that I really understood the use of reusable components and the whole reason for using React.",
         github: "https://github.com/v-amirrr/memory-game",
-        demo: "https://memory-match-react.netlify.app/",
+        demo: "https://memory-game-reactjs-project.vercel.app/",
         url: 6,
     },
 
