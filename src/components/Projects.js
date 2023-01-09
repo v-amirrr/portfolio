@@ -9,23 +9,17 @@ import { motion } from 'framer-motion';
 
 const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.05, when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.03, when: "afterChidren" } }
+    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } },
+    exit: { opacity: 0, transition: { duration: 0.2, staggerChildren: 0.05, when: "afterChidren" } }
 };
 
-const projectDesktopVariants = {
-    hidden: { opacity: 0, y: -30, x: -30, scale: 0.8 },
-    visible: { opacity: 1, y: 0, x: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: 30, x: 30, scale: 0.8, transition: { duration: 0.4, type: 'tween' } }
+const projectVariants = {
+    hidden: { opacity: 0, y: -20, scaleY: 0.8 },
+    visible: { opacity: 1, y: 0, scaleY: 1, transition: { duration: 0.4, type: 'tween' } },
+    exit: { opacity: 0, y: 20, scaleY: 0.8, transition: { duration: 0.4, type: 'tween' } }
 };
 
-const projectMobileVariants = {
-    hidden: { opacity: 0, y: -50, scale: 0.8 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: 50, scale: 0.9, transition: { duration: 0.4, type: 'tween' } }
-};
-
-const Projects = ({ widthSize }) => {
+const Projects = () => {
     return (
         <>
             <ProjectsPage initial='hidden' animate='visible' exit='exit'>
@@ -33,7 +27,7 @@ const Projects = ({ widthSize }) => {
                     {
                         projects.map(item => (
                             <Link to={"/projects/" + item.url} key={item.url}>
-                                <Project variants={widthSize >= 900 ? projectDesktopVariants : projectMobileVariants}>
+                                <Project variants={projectVariants} whileTap={{ scale: 0.9 }}>
                                     <img src={item.image} alt={item.title} />
                                     <div>
                                         <h4>{item.title}</h4>

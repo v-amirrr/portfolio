@@ -305,10 +305,10 @@ const Title = styled.div`
                 letter-spacing: -1px;
                 font-weight: 600;
                 position: absolute;
-                left: 0;
+                left: -2rem;
                 opacity: 0;
                 white-space: nowrap;
-                transition: opacity .3s, left .5s;
+                transition: opacity .2s, left .3s;
             }
         }
     }
@@ -326,7 +326,7 @@ const ToggleSection = styled.div`
     transition: height .25s;
 
     .title {
-        color: ${props => props.show ? "#ddd" : "#666"};
+        color: ${props => props.show ? "#bbb" : "#666"};
         display: flex;
         justify-content: center;
         align-items: center;
@@ -350,6 +350,10 @@ const ToggleSection = styled.div`
             margin-right: .4rem;
             transform: ${props => props.show ? "rotate(90deg)" : "rotate(0deg)"};
             transition: transform .2s;
+        }
+
+        &:hover {
+            color: #fff;
         }
     }
 
@@ -430,7 +434,7 @@ const ExternalLink = styled(motion.div)`
         justify-content: center;
         align-items: center;
         background-color: #ffffff08;
-        border: solid 1px #ffffff11;
+        border: solid 1px #ffffff0a;
         border-radius: 10px;
         cursor: pointer;
         color: #c1c1c1;

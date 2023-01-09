@@ -8,20 +8,8 @@ import { motion } from 'framer-motion';
 
 const contentVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.2, staggerChildren: 0.1, when: "beforeChildren" } },
-    exit: { opacity: 0, transition: { duration: 0.2, when: "afterChildren" } }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, y: 20, transition: { duration: 0.4, type: 'tween' } }
-};
-
-const socialMediaVariants = {
-    hidden: { opacity: 0, scaleY: 0 },
-    visible: { opacity: 1, scaleY: 1, transition: { duration: 0.4 } },
-    exit: { opacity: 0, scaleY: 0, transition: { duration: 0.4 } }
+    visible: { opacity: 1, transition: { duration: 0.4, when: "beforeChildren" } },
+    exit: { opacity: 0, color: "#00000000", transition: { duration: 0.2, when: "beforeChildren" } }
 };
 
 const Home = () => {
@@ -29,15 +17,8 @@ const Home = () => {
         <>
             <HomePage initial='hidden' animate='visible' exit='exit' variants={contentVariants}>
                 <Title>
-                    <motion.h1 className='title-text' variants={itemVariants}>
-                        <span>M</span>
-                        <span>y </span>
-                        <span>N</span>
-                        <span>a</span>
-                        <span>m</span>
-                        <span>e </span>
-                        <span>I</span>
-                        <span>s</span>
+                    <motion.h1 className='title-text'>
+                        My name is
 
                         <div className='title-name'>
                             <span>A </span>
@@ -46,14 +27,11 @@ const Home = () => {
                             <span>R</span>
                         </div>
 
-                        <span>.</span>
+                        .
                     </motion.h1>
 
-                    <motion.h1 className='title-text' variants={itemVariants}>
-                        <span>I</span>
-                        <span>'</span>
-                        <span>m </span>
-                        <span>a</span>
+                    <motion.h1 className='title-text'>
+                        I'm a
 
                         <div className='title-field'>
                             <span>F</span>
@@ -67,20 +45,11 @@ const Home = () => {
                             <span>D</span>
                         </div>
 
-                        <span>d</span>
-                        <span>e</span>
-                        <span>v</span>
-                        <span>e</span>
-                        <span>l</span>
-                        <span>o</span>
-                        <span>p</span>
-                        <span>e</span>
-                        <span>r</span>
-                        <span>.</span>
+                        developer.
                     </motion.h1>
                 </Title>
 
-                <Buttons variants={itemVariants}>
+                <Buttons>
                     <a href='https://drive.google.com/file/d/1wZJ0K-Fez_pX9yQO2U_INKqFZbfSclMm/view?usp=sharing' target="_blank">
                         <motion.div whileTap={{ scale: 0.8 }}>
                             <p>check out my resume</p>
@@ -88,7 +57,7 @@ const Home = () => {
                     </a>
                 </Buttons>
 
-                <SocialMedia variants={socialMediaVariants}>
+                <SocialMedia>
                     <a href='https://github.com/v-amirrr' target="_blank" rel="noopener noreferror">
                         <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.8 }}>
                             <img src={GitHubIcon} />
@@ -125,14 +94,6 @@ const Title = styled(motion.div)`
     white-space: nowrap;
     margin-top: 2rem;
 
-    span {
-        transition: color .2s;
-        
-        &:hover {
-            color: #fff;
-        }
-    }
-
     .title-text {
         font-size: 1.1rem;
         font-weight: 200;
@@ -140,23 +101,23 @@ const Title = styled(motion.div)`
         color: #88888888;
         display: inline;
     }
-    
+
+    @keyframes colorAnimation {
+        0% { color: #00000000 }
+        100% { color: #fff }
+    }
+
     .title-name {
         display: inline;
         font-size: 9.2rem;
         font-weight: 900;
         letter-spacing: -1.16rem;
-        color: #88888859;
+        color: #00000000;
         text-shadow: #00000059 0px 4px 12px;
         margin-left: .2rem;
         margin-right: 1rem;
-
-        span {
-            transition: color .2s;
-            &:hover {
-                color: #888;
-            }
-        }
+        mix-blend-mode: overlay;
+        animation: colorAnimation .5s ease .5s 1 alternate forwards;
     }
 
     .title-field {
@@ -164,17 +125,13 @@ const Title = styled(motion.div)`
         font-size: 3.4rem;
         font-weight: 900;
         letter-spacing: -.3rem;
-        color: #88888833;
+        color: #00000000;
         text-shadow: #00000055 0px 4px 12px;
         margin: 0 .2rem;
-
-        span {
-            transition: color .2s;
-            &:hover {
-                color: #888;
-            }
-        }
+        mix-blend-mode: overlay;
+        animation: colorAnimation .5s ease .5s 1 alternate forwards;
     }
+
 
     @media (max-width: 600px) {
         margin-top: -1.5rem;
