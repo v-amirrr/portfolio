@@ -15,7 +15,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 const pageDesktopVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: [-10, 10, 0], scale: [1.1, 1], transition: { duration: 0.4, type: 'tween' } },
-    exit: { opacity: 0, x: [0, 10, -100], scale: [1, 1.2], transition: { duration: 0.4, type: 'tween' } }
+    exit: { opacity: 0, x: [0, 10, -100], scale: [1, 1.3], transition: { duration: 0.4, type: 'tween' } }
 };
 
 const pageMobileVariants = {
@@ -27,7 +27,7 @@ const pageMobileVariants = {
 const toggleSectionVariants = {
     hidden: { opacity: 0, y: 20, scaleX: 0.8 },
     visible: { opacity: 1, y: 5, scaleX: 1, transition: { duration: 0.3 } },
-    exit: { opacity: 0, y: -20, scaleX: 0.8, scaleY: 0, transition: { duration: 0.3 } }
+    exit: { opacity: 0, y: -40, scaleX: 0.5, scaleY: 0, transition: { duration: 0.3 } }
 };
 
 const ProjectPage = ({ widthSize }) => {
@@ -282,6 +282,7 @@ const Title = styled.div`
                 p {
                     left: 130%;
                     opacity: 1;
+                    transform: scale(1);
                 }
             }
         }
@@ -308,7 +309,8 @@ const Title = styled.div`
                 left: -2rem;
                 opacity: 0;
                 white-space: nowrap;
-                transition: opacity .2s, left .3s;
+                transform: scale(0.5);
+                transition: opacity .3s, left .3s, transform .3s;
             }
         }
     }

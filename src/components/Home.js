@@ -21,10 +21,7 @@ const Home = () => {
                         My name is
 
                         <div className='title-name'>
-                            <span>A </span>
-                            <span>M</span>
-                            <span>I</span>
-                            <span>R</span>
+                            AMIR
                         </div>
 
                         .
@@ -34,15 +31,7 @@ const Home = () => {
                         I'm a
 
                         <div className='title-field'>
-                            <span>F</span>
-                            <span>R</span>
-                            <span>O</span>
-                            <span>N</span>
-                            <span>T</span>
-                            <span>-</span>
-                            <span>E</span>
-                            <span>N</span>
-                            <span>D</span>
+                            FRONT-END
                         </div>
 
                         developer.
@@ -95,10 +84,10 @@ const Title = styled(motion.div)`
     margin-top: 2rem;
 
     .title-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 200;
         word-spacing: 2px;
-        color: #88888888;
+        color: #88888855;
         display: inline;
     }
 
@@ -109,9 +98,9 @@ const Title = styled(motion.div)`
 
     .title-name {
         display: inline;
-        font-size: 9.2rem;
+        font-size: 10.5rem;
         font-weight: 900;
-        letter-spacing: -1.16rem;
+        letter-spacing: -1.3rem;
         color: #00000000;
         text-shadow: #00000059 0px 4px 12px;
         margin-left: .2rem;
@@ -122,7 +111,7 @@ const Title = styled(motion.div)`
 
     .title-field {
         display: inline;
-        font-size: 3.4rem;
+        font-size: 4rem;
         font-weight: 900;
         letter-spacing: -.3rem;
         color: #00000000;
@@ -142,14 +131,15 @@ const Title = styled(motion.div)`
         }
         
         .title-name {
-            font-size: 6.5rem;
-            letter-spacing: -.8rem;
+            font-size: 8.5rem;
+            letter-spacing: -1rem;
+            display: block;
         }
 
         .title-field {
-            font-size: 2.5rem;
+            font-size: 3rem;
             letter-spacing: -.2rem;
-            margin: 0 .5rem;
+            margin: .5rem 0;
         }
     }
 `;
@@ -191,6 +181,7 @@ const Buttons = styled(motion.div)`
         @media (max-width: 800px) {
             background-color: #ffffff02;
             padding: .7rem .8rem;
+            font-size: .7rem;
         }
     }
 `;
