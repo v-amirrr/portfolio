@@ -18,13 +18,12 @@ const Home = () => {
             <HomePage initial='hidden' animate='visible' exit='exit' variants={contentVariants}>
                 <Title>
                     <motion.h1 className='title-text'>
-                        My name is
+                        I'm
 
                         <div className='title-name'>
                             AMIR
                         </div>
 
-                        .
                     </motion.h1>
 
                     <motion.h1 className='title-text'>
@@ -34,12 +33,12 @@ const Home = () => {
                             FRONT-END
                         </div>
 
-                        developer.
+                        developer
                     </motion.h1>
                 </Title>
 
                 <Buttons>
-                    <a href='https://drive.google.com/file/d/1wZJ0K-Fez_pX9yQO2U_INKqFZbfSclMm/view?usp=sharing' target="_blank">
+                    <a href='https://drive.google.com/file/d/1wZJ0K-Fez_pX9yQO2U_INKqFZbfSclMm/view?usp=sharing' target="_blank" rel="noopener noreferror">
                         <motion.div whileTap={{ scale: 0.8 }}>
                             <p>check out my resume</p>
                         </motion.div>
