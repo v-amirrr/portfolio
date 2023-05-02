@@ -13,7 +13,7 @@ const Navbar = () => {
 
     return (
         <>
-            <Nav selected={location.pathname == "/" ? 1 : location.pathname == "/projects" ? 2 : location.pathname == "/about-me" ? 3 : location.pathname == "/contact" ? 4 : ""}>
+            <Nav selected={location.pathname == "/" ? 1 : location.pathname == "/projects" ? 2 : location.pathname == "/about-me" ? 3 : location.pathname == "/contact" ? 4 : 2}>
                 <div className='navbar-select'></div>
                 <Link to="/">
                     <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/" ? "active" : ""}>home</motion.div>
