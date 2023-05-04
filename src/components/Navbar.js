@@ -109,21 +109,6 @@ const Nav = styled(motion.nav)`
         transition: color .4s, padding .4s, letter-spacing .4s;
         white-space: nowrap;
         z-index: -1;
-
-        @media (max-width: 500px) {
-            padding: 0 .4rem;
-        }
-    }
-
-    @media (max-width: 500px) {
-        .navbar-select {
-            left: ${props => 
-                props.selected == 1 ? "1.2rem" : 
-                props.selected == 2 ? "4.15rem" : 
-                props.selected == 3 ? "8.3rem" : 
-                props.selected == 4 ? "12.8rem" : ""
-            };
-        }
     }
 
     .active {
