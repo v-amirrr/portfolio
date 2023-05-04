@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 import { Link } from "react-router-dom";
 
@@ -30,13 +30,29 @@ const textMobileVariants = {
 };
 
 const AboutMe = ({ widthSize }) => {
+
+    const aboutMePageRef = useRef();
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    let localStorageScrollPosition = localStorage.getItem("about-me-scroll-positon");
+
+    useEffect(() => {
+        if (scrollPosition != 0) {
+            localStorage.setItem("about-me-scroll-positon", scrollPosition);
+        }
+    }, [scrollPosition]);
+
+    useEffect(() => {
+        aboutMePageRef.current.scrollTo(0, localStorageScrollPosition);
+    }, []);
+
     return (
         <>
             <AboutMePage initial='hidden' animate='visible' exit='exit'>
                 <Content>
                     <Title variants={widthSize >= 900 ? titleDesktopVariants : titleMobileVariants}>who am i?</Title>
                     <Text variants={widthSize >= 900 ? textDesktopVariants : textMobileVariants}>
-                        <p>
+                        <p ref={aboutMePageRef} onScroll={() => setScrollPosition(aboutMePageRef.current.scrollTop)}>
                             I'm a junior Front-End Developer. I was borned and raised in Mashhad which is a !beautiful city in Iran.
                             <br />
                             <br />
