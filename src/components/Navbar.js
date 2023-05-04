@@ -9,21 +9,25 @@ const Navbar = () => {
 
     const location = useLocation();
 
+    const [hovered, setHovered] = useState(0);
+    const [hoveredLeave, setHoveredLeave] = useState(true);
+
     return (
         <>
-            <Nav selected={location.pathname == "/" ? 1 : location.pathname == "/projects" ? 2 : location.pathname == "/about-me" ? 3 : location.pathname == "/contact" ? 4 : 2}>
+            <Nav hovered={hovered} hoveredleave={hoveredLeave ? 1 : 0} selected={location.pathname == "/" ? 1 : location.pathname == "/projects" ? 2 : location.pathname == "/about-me" ? 3 : location.pathname == "/contact" ? 4 : 2} onMouseOut={() => setHoveredLeave(true)} onMouseOver={() => setHoveredLeave(false)}>
                 <div className='navbar-select'></div>
+                <div className='navbar-hover'></div>
                 <Link to="/">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/" ? "active" : ""}>home</motion.div>
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/" ? "active" : ""} onMouseOver={() => setHovered(1)}>home</motion.div>
                 </Link>
                 <Link to="/projects">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/projects" ? "active" : ""}>projects</motion.div>
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/projects" ? "active" : ""} onMouseOver={() => setHovered(2)}>projects</motion.div>
                 </Link>
                 <Link to="/about-me">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/about-me" ? "active" : ""}>about me</motion.div>
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/about-me" ? "active" : ""} onMouseOver={() => setHovered(3)}>about me</motion.div>
                 </Link>
                 <Link to="/contact">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/contact" ? "active" : ""}>contact</motion.div>
+                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/contact" ? "active" : ""} onMouseOver={() => setHovered(4)}>contact</motion.div>
                 </Link>
             </Nav>
         </>
@@ -46,7 +50,8 @@ const Nav = styled(motion.nav)`
     top: .5rem;
     left: 50%;
     transform: translate(-50%, 0);
-    padding: 1rem .8rem;
+    width: 18.9rem;
+    height: 3rem;
     border-radius: 10px;
     background-color: #e6e6e602;
     box-shadow: #00000011 0px 4px 12px;
@@ -70,23 +75,41 @@ const Nav = styled(motion.nav)`
         height: .2rem;
         border-radius: 50px;
         background-color: #e6e6e6;
-        transition: width 1s cubic-bezier(.53,0,0,.98), left 1s cubic-bezier(.53,0,0,.98);
+        transition: width .8s cubic-bezier(.53,0,0,.98), left .5s cubic-bezier(.53,0,0,.98);
     }
-    
+
+    .navbar-hover {
+        position: absolute;
+        height: ${props => props.hoveredleave ? "0" : "2.2rem"};
+        width: ${props => 
+            props.hovered == 1 ? "2.95rem" : 
+            props.hovered == 2 ? "4.4rem" : 
+            props.hovered == 3 ? "4.7rem" : 
+            props.hovered == 4 ? "4.2rem" : ""
+        };
+        left: ${props => 
+            props.hovered == 1 ? ".95rem" : 
+            props.hovered == 2 ? "4.2rem" : 
+            props.hovered == 3 ? "8.8rem" : 
+            props.hovered == 4 ? "13.7rem" : ""
+        };
+        border-radius: 10px;
+        background-color: #e6e6e607;
+        transition: width .3s, left .3s, height .2s;
+    }
+
     div {
         padding: 0 .6rem;
-        cursor: pointer;        
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
         color: #aaa;
         transition: color .4s, padding .4s, letter-spacing .4s;
         white-space: nowrap;
+        z-index: -1;
 
-        @media (hover: hover) and (pointer: fine) and (min-width: 745px) {
-            &:hover {
-                /* padding: 0 .8rem; */
-                /* letter-spacing: 2px; */
-            }
-        }
-        
         @media (max-width: 500px) {
             padding: 0 .4rem;
         }
