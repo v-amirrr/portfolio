@@ -9,8 +9,6 @@ const Navbar = () => {
 
     const location = useLocation();
 
-    const [selectedButton, setSelectedButton] = useState(1);
-
     return (
         <>
             <Nav selected={location.pathname == "/" ? 1 : location.pathname == "/projects" ? 2 : location.pathname == "/about-me" ? 3 : location.pathname == "/contact" ? 4 : 2}>

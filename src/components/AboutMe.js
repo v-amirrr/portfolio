@@ -58,26 +58,26 @@ const AboutMe = ({ widthSize }) => {
                             Also I tried jQuery to know what it is and after realizing what it is I haven't worked with it since.
                             <br />
                             <br />
-                            Then I learned Git and it was project time so I built my first professional project called <Link to="/projects/7" className='link'>CLock</Link>. This project is built only with HTML, CSS and JavaScript.
+                            Then I learned Git and it was project time so I built my first professional project called <Link to="/projects/8" className='link'>CLock</Link>. This project is built only with HTML, CSS and JavaScript.
                             <br />
                             <br />
                             After my first project, it was time to start the real shit. So I started learning React.js. Why did I choose React? Good questions.
                             <br />
                             <br />
-                            So after trying a lot of courses I gained some knowledge about React.js. I decided to build a little project with it, just for fun. So I built <Link to="/projects/6" className='link'>Random-Password-Generator</Link>.
+                            So after trying a lot of courses I gained some knowledge about React.js. I decided to build a little project with it, just for fun. So I built <Link to="/projects/7" className='link'>Random-Password-Generator</Link>.
                             This project was supposed to be a project where I practice my React skills but it really was more JavaScript than React in it. I built it anyway.
                             <br />
                             <br />
-                            Then I realized that I wanted a real thing, a unique project. So I built <Link to="/projects/5" className='link'>Memory-Game</Link>. That project really helped me with my React skills. It was in that project that I really understood the use of reusable components and the whole reason for using React.
+                            Then I realized that I wanted a real thing, a unique project. So I built <Link to="/projects/6" className='link'>Memory-Game</Link>. That project really helped me with my React skills. It was in that project that I really understood the use of reusable components and the whole reason for using React.
                             <br />
                             <br />
-                            After that one I went for another, I built <Link to="/projects/4" className='link'>Recipe-Directory</Link>. This one was the one, and by the one I mean more close to a real project. But still there are a lot of things in this project that are different from a real project out there but still in that time it was a huge success for me.
+                            After that one I went for another, I built <Link to="/projects/5" className='link'>Recipe-Directory</Link>. This one was the one, and by the one I mean more close to a real project. But still there are a lot of things in this project that are different from a real project out there but still in that time it was a huge success for me.
                             <br />
                             <br />
                             Then I built the next one and I realized that the last one was nothing.
                             <br />
                             <br />
-                            I built <Link to="/projects/3" className='link'>Finance-Tracker</Link>. Till now, this project is the hardest and the most complex project I've ever built. It was my first time that I had to deal with authentication. And it was the hardest part.
+                            I built <Link to="/projects/4" className='link'>Finance-Tracker</Link>. Till now, this project is the hardest and the most complex project I've ever built. It was my first time that I had to deal with authentication. And it was the hardest part.
                             <br />
                             <br />
                             Honestly till today I don't even know how I built that project, I mean literally if someone wanted me to open the codes and explain them, I got nothing to say. And they'll have nothing either, only God knows how that project is working.
@@ -86,7 +86,7 @@ const AboutMe = ({ widthSize }) => {
                             I have more plans for that project. First of all, I want to figure out what the hell I wrote to make that work, then I want to add a lot of features to it.
                             <br />
                             <br />
-                            So after that one I built <Link to="/projects/2" className='link'>Disney-Plus-Clone</Link>. This project was really easy and it was really good because after this project I feel like I'm the god of authentication (I'll bet I will laugh at this sentence in future).
+                            So after that one I built <Link to="/projects/3" className='link'>Disney-Plus-Clone</Link>. This project was really easy and it was really good because after this project I feel like I'm the god of authentication (I'll bet I will laugh at this sentence in future).
                             <br />
                             <br />
                             Next I built my portfolio which you're in already (I'll bet no one's here).
@@ -96,7 +96,7 @@ const AboutMe = ({ widthSize }) => {
                             After that I wanted to build a lyrics search and that API also wanted a phone number and you know the rest.
                             <br />
                             <br />
-                            So I went for another Firebase project. I built <Link to="/projects/1" className='link'>Group-Messenger</Link>. I just wanted this project to be simple as possible. You can send your messages with just entering your name. It was a good project. It really made me happy. It's so clean and beautiful.
+                            So I went for another Firebase project. I built <Link to="/projects/2" className='link'>Group-Messenger</Link>. I just wanted this project to be simple as possible. You can send your messages with just entering your name. It was a good project. It really made me happy. It's so clean and beautiful.
                             <br />
                             <br />
                             So here I am. Right now I'm looking for a position to use my skills and gain some experience. To reach me just go to the <Link to="/contact" className='link'>contact</Link> page.
