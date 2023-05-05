@@ -18,16 +18,16 @@ const Navbar = () => {
                 <div className='navbar-select'></div>
                 <div className='navbar-hover'></div>
                 <Link to="/">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/" ? "active" : ""} onMouseOver={() => setHovered(1)}>home</motion.div>
+                    <motion.div className={location.pathname == "/" ? "active" : ""} onMouseOver={() => setHovered(1)}>home</motion.div>
                 </Link>
                 <Link to="/projects">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/projects" ? "active" : ""} onMouseOver={() => setHovered(2)}>projects</motion.div>
+                    <motion.div className={location.pathname == "/projects" ? "active" : ""} onMouseOver={() => setHovered(2)}>projects</motion.div>
                 </Link>
                 <Link to="/about-me">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/about-me" ? "active" : ""} onMouseOver={() => setHovered(3)}>about me</motion.div>
+                    <motion.div className={location.pathname == "/about-me" ? "active" : ""} onMouseOver={() => setHovered(3)}>about me</motion.div>
                 </Link>
                 <Link to="/contact">
-                    <motion.div whileTap={{ scale: 0.8 }} className={location.pathname == "/contact" ? "active" : ""} onMouseOver={() => setHovered(4)}>contact</motion.div>
+                    <motion.div className={location.pathname == "/contact" ? "active" : ""} onMouseOver={() => setHovered(4)}>contact</motion.div>
                 </Link>
             </Nav>
         </>
